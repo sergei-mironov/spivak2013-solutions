@@ -3,6 +3,5 @@
 all: main.pdf
 
 main.pdf: main.tex
-	pdflatex -shell-escape $<
-	pdflatex -shell-escape $<
+	latexmk -shell-escape -pdf -interaction=nonstopmode -latex=pdflatex "$<"
 

@@ -23,10 +23,11 @@
 \newcommand{\REM}[1]{\tcp*{\parbox[t]{2.0in}{\raggedright #1}}}
 \usepackage[normalem]{ulem}
 
-\usepackage[style=apa,natbib]{biblatex}
-\addbibresource{tech.bib}
+\usepackage{biblatex}
+\addbibresource{main.bib}
 
 \usepackage{listings}
+\usepackage{tikz-cd}
 \lstset{
 basicstyle=\small\ttfamily,
 columns=flexible,
@@ -48,6 +49,7 @@ breaklines=true
 \renewcommand{\rich}[1]{\textbf{\CLR{red}{R: #1}}}
 \renewcommand{\serg}[1]{\textbf{\CLR{blue}{S: #1}}}
 \newcommand{\vsp}[0]{\vspace*{10pt}\par}
+\newcommand{\tcite}[1]{\textit{(\citefield{#1}{year}, \citeauthor{#1})}\:\textit{``\citefield{#1}{title}''}\:\cite{#1}}
 % \renewcommand{\u}[2]{\href{#2}{#1}}
 
 \newcommand{\JProg}{\mathbb{J}}
@@ -95,6 +97,7 @@ breaklines=true
 % \RedeclareSectionCommand[runin=false,afterskip=0pt,afterindent=false]{paragraph}
 
 \title{Solutions}
+\author{Sergei Mironov}
 
 \begin{document}
 
@@ -103,6 +106,23 @@ breaklines=true
 \tableofcontents
 
 \section{Introduction}
+
+The book \tcite{Spivak2013CategoryTF}.
+
+\begin{tikzcd}
+A \arrow[d, "g"] \arrow[r, "f"] & B \arrow[r, "\alpha"] \arrow[d, "\gamma"] & D \arrow[d, "\beta"] \\
+C \arrow[rru, "h"] & B' \arrow[r, "\lambda"] & D'
+\end{tikzcd}
+
+
+\setcounter{section}{2}
+\section*{Chapter 2. The Category of Sets}
+
+\setcounter{subsection}{3}
+\subsection{Products and coproducts}
+TODO
+
+\printbibliography
 
 \end{document}
 
