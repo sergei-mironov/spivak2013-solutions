@@ -23,8 +23,8 @@ Note: I've used title case to make it look like a heading. Let me know if you ne
 ```
 -->
 
-Category Theory for Scientists by Spivak (2013) Solutions Repository
---------------------------------------------------------------------
+Category Theory for Scientists by Spivak (2013) Solutions
+---------------------------------------------------------
 
 [[Solutions]](./tex/main.pdf)
 
