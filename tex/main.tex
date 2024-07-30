@@ -133,23 +133,24 @@ How many elements does the $\set{a,b,c,d} * \set{1,2,3}$ have?
 
 \exercise{2.4.1.15}
 
-(a) Let $X$ and $Y$ be sets.. construct the "swap map" $s:(X,Y)\to(Y,X)$
+(a) Let $X$ and $Y$ be sets.. construct the "swap map" $s:(X \times Y)\to(Y \times X)$
 \ans
-$s:(X,Y)\to(Y,X) = (,)\circ\langle\pi_2,\pi_1\rangle$
+$s:(X \times Y)\to(Y \times X) = (,)\circ\langle\pi_2,\pi_1\rangle$
 
 Note: we used angle brackets. Is it really correct?
 
 \vsp
 (b) Can you prove that $s$ is a isomorphism using only the universal property for product?
 
-Note: $(f:X \to Y)$ is an isomorphism if $\exists (g:Y \to X): g \circ f = id_X \land f \circ g = id_Y$
+Note: $(f:X \to Y)$ is an isomorphism if $\exists (g:Y \to X): g \circ f = id_X \land f \circ g =
+id_Y$
 
 Note: diagram $(f,g,h)$ commutes if $f \circ g = h$
 \ans
 
-In universal property of products, put $A$ equal to $Y * X$ and get $\exists !
-g:(Y*X)\to(X,Y)$. In a similar way, we have $\exists! s:(X,Y)\to(Y,X)$.
-We need to show that $g \circ s = id_{(X*Y)}$ and $s \circ g = id_{(Y*X)}$.
+In universal property of products, put $A$ equal to $Y \times X$ and get $\exists !
+g:(Y \times X)\to(X \times Y)$. In a similar way, we have $\exists! s:(X \times Y)\to(Y \times X)$.
+We need to show that $g \circ s = id_{(X \times Y)}$ and $s \circ g = id_{(Y\times X)}$.
 
 TODO
 
