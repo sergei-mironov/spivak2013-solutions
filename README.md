@@ -26,6 +26,7 @@ Note: I've used title case to make it look like a heading. Let me know if you ne
 Category Theory for Scientists by Spivak (2013) Solutions Repository
 --------------------------------------------------------------------
 
+[[Solutions]](./tex/main.pdf)
 
 Also helping Author to get familiar with tikz and other LaTeX packages.
 
