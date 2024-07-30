@@ -32,6 +32,7 @@ let
         numpy
         bpython
         psutil
+        pygments
       ]
     );
 
@@ -59,6 +60,7 @@ let
         texlive-dev
         zathura
         evince
+        python-dev
       ];
 
       shellHook = with pkgs; ''
