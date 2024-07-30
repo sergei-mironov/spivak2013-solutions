@@ -34,8 +34,6 @@ columns=flexible,
 breaklines=true
 }
 
-
-
 \setlength{\parindent}{0pt}
 
 \newcommand{\ket}[1]{\left|{#1}\right\rangle}
@@ -50,7 +48,8 @@ breaklines=true
 \renewcommand{\serg}[1]{\textbf{\CLR{blue}{S: #1}}}
 \newcommand{\vsp}[0]{\vspace*{10pt}\par}
 \newcommand{\tcite}[1]{\textit{(\citefield{#1}{year}, \citeauthor{#1})}\:\textit{``\citefield{#1}{title}''}\:\cite{#1}}
-% \renewcommand{\u}[2]{\href{#2}{#1}}
+\newcommand{\exercise}[1]{\subsubsection*{#1}}
+\newcommand{\ans}[0]{\vsp\textbf{Answer: }}
 
 \newcommand{\JProg}{\mathbb{J}}
 \newcommand{\AST}{\mathbb{AST}}
@@ -120,6 +119,38 @@ C \arrow[rru, "h"] & B' \arrow[r, "\lambda"] & D'
 
 \setcounter{subsection}{3}
 \subsection{Products and coproducts}
+
+\exercise{2.4.1.4}
+How many elements does the $\set{a,b,c,d} * \set{1,2,3}$ have?
+\ans
+12
+
+\exercise{2.4.1.8}
+\ans
+\vsp (a) No, because $a(b + c) \neq (a+b)c$.
+\vsp (b) No, because $x*0 \neq x$.
+\vsp (c) Yes.
+
+\exercise{2.4.1.15}
+
+(a) Let $X$ and $Y$ be sets.. construct the "swap map" $s:(X,Y)\to(Y,X)$
+\ans
+$s:(X,Y)\to(Y,X) = (,)\circ\langle\pi_2,\pi_1\rangle$
+
+Note: we used angle brackets. Is it really correct?
+
+\vsp
+(b) Can you prove that $s$ is a isomorphism using only the universal property for product?
+
+Note: $(f:X \to Y)$ is an isomorphism if $\exists (g:Y \to X): g \circ f = id_X \land f \circ g = id_Y$
+
+Note: diagram $(f,g,h)$ commutes if $f \circ g = h$
+\ans
+
+In universal property of products, put $A$ equal to $Y * X$ and get $\exists !
+g:(Y*X)\to(X,Y)$. In a similar way, we have $\exists! s:(X,Y)\to(Y,X)$.
+We need to show that $g \circ s = id_{(X*Y)}$ and $s \circ g = id_{(Y*X)}$.
+
 TODO
 
 \printbibliography
