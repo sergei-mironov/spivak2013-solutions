@@ -1,0 +1,108 @@
+% vim:foldmethod=marker:fmr=<<<,>>> spell nowrap
+\documentclass{article}
+
+% <<<
+\usepackage[utf8]{inputenc}
+\usepackage[total={6.2in, 8in}]{geometry}
+
+\usepackage{amsmath, amsthm, amssymb,amsfonts, mathtools}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[percent]{overpic} %writing over pictures
+\usepackage{xcolor}
+\usepackage{appendix}
+
+\usepackage{mdframed}
+\usepackage[colorlinks,urlcolor=blue]{hyperref}
+\usepackage{verbatim}
+%\usepackage{fancyvrb}
+\usepackage{minted}
+\renewcommand{\MintedPygmentize}{pygmentize}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\setlength{\algomargin}{10pt}
+\newcommand{\REM}[1]{\tcp*{\parbox[t]{2.0in}{\raggedright #1}}}
+\usepackage[normalem]{ulem}
+
+\usepackage[style=apa,natbib]{biblatex}
+\addbibresource{tech.bib}
+
+\usepackage{listings}
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
+
+
+
+\setlength{\parindent}{0pt}
+
+\newcommand{\ket}[1]{\left|{#1}\right\rangle}
+\newcommand{\bra}[1]{\left\langle{#1}\right|}
+\newcommand{\BS}{\backslash}
+
+\newcommand\rich[1]{\textbf{\sffamily\color{red!100!blue} #1}}
+\newcommand\serg[2]{\textbf{\sffamily\color{red!25!blue} #2}}
+
+\newcommand{\CLR}[2]{\begingroup\color{#1}#2\endgroup}
+\renewcommand{\rich}[1]{\textbf{\CLR{red}{R: #1}}}
+\renewcommand{\serg}[1]{\textbf{\CLR{blue}{S: #1}}}
+\newcommand{\vsp}[0]{\vspace*{10pt}\par}
+% \renewcommand{\u}[2]{\href{#2}{#1}}
+
+\newcommand{\JProg}{\mathbb{J}}
+\newcommand{\AST}{\mathbb{AST}}
+\newcommand{\TNET}{\mathbb{TNET}}
+\newcommand{\CV}{\mathbb{R}^N}
+% Define \set{} command. TODO: Looks too complicated!
+\DeclarePairedDelimiterX{\set}[1]{\{}{\}}{\setargs{#1}}
+\NewDocumentCommand{\setargs}{>{\SplitArgument{1}{;}}m}
+{\setargsaux#1}
+\NewDocumentCommand{\setargsaux}{mm}
+{\IfNoValueTF{#2}{#1} {#1\,\delimsize|\,\mathopen{}#2}}%{#1\:;\:#2}
+
+% Generic environment for code snippets
+\newenvironment{codeverbatim}
+  {\VerbatimEnvironment
+   \begin{minted}[autogobble,breaklines,fontsize=\footnotesize]{latex}}
+  {\end{minted}}
+\BeforeBeginEnvironment{codeverbatim}{\begin{mdframed}[nobreak=true,frametitle=\tiny{Source}]}
+\AfterEndEnvironment{codeverbatim}{\end{mdframed}}
+
+% LitREPL-compatible environment for code snippets
+\newenvironment{python}
+  {\VerbatimEnvironment
+   \begin{minted}[autogobble,breaklines,fontsize=\footnotesize]{python}}
+  {\end{minted}}
+\BeforeBeginEnvironment{python}{\begin{mdframed}[nobreak=true,frametitle=\tiny{IPython}]}
+\AfterEndEnvironment{python}{\end{mdframed}}
+
+% LitREPL-compatible environment for code results
+\newenvironment{result}
+  {\VerbatimEnvironment
+   \begin{minted}[autogobble,breaklines,fontsize=\footnotesize]{text}}
+  {\end{minted}}
+\BeforeBeginEnvironment{result}{\begin{mdframed}[nobreak=true,frametitle=\tiny{Result}]}
+\AfterEndEnvironment{result}{\end{mdframed}}
+
+% LitREPL-compatible command for inline code results
+\newcommand{\linline}[2]{#2}
+\newcommand{\st}[1]{\sout{#1}}
+\renewcommand{\t}[1]{\texttt{#1}}
+% >>>
+
+\setcounter{secnumdepth}{4}
+% \RedeclareSectionCommand[runin=false,afterskip=0pt,afterindent=false]{paragraph}
+
+\title{Solutions}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+\end{documnet}
+
