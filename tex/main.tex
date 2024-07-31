@@ -40,12 +40,12 @@ breaklines=true
 \newcommand{\bra}[1]{\left\langle{#1}\right|}
 \newcommand{\BS}{\backslash}
 
-\newcommand\rich[1]{\textbf{\sffamily\color{red!100!blue} #1}}
-\newcommand\serg[2]{\textbf{\sffamily\color{red!25!blue} #2}}
-
 \newcommand{\CLR}[2]{\begingroup\color{#1}#2\endgroup}
-\renewcommand{\rich}[1]{\textbf{\CLR{red}{R: #1}}}
-\renewcommand{\serg}[1]{\textbf{\CLR{blue}{S: #1}}}
+\newcommand{\R}[1]{\begingroup\color{red}#1\endgroup}
+\newcommand{\G}[1]{\begingroup\color{green}#1\endgroup}
+\newcommand{\B}[1]{\begingroup\color{blue}#1\endgroup}
+\newcommand{\Y}[1]{\begingroup\color{yellow}#1\endgroup}
+
 \newcommand{\vsp}[0]{\vspace*{10pt}\par}
 \newcommand{\tcite}[1]{\textit{(\citefield{#1}{year}, \citeauthor{#1})}\:\textit{``\citefield{#1}{title}''}\:\cite{#1}}
 \newcommand{\exercise}[1]{\subsubsection*{#1}}
@@ -163,6 +163,60 @@ A &                                                                             
 
 $id = id_{(A \times B)}$ - is the unique identity function. By combining diagrams for $f$ and $g$ we
 reduce the $g \circ f$ to the similar case.
+
+\exercise{2.4.2.4}
+
+Would you say that ⌜a phone⌝ is the coproduct of a \texttt{cellphone} and a \texttt{landline phone}?
+
+\ans
+Yes, until we consider other types of phones besides cell- and landline ones.
+
+\exercise{2.4.2.10}
+
+Write the universal property for coproduct in terms of a relationship between..
+
+\ans $Hom_{Set}(X,A) \sqcup Hom_{Set}(Y,A) \cong Hom_{Set}(X \sqcup Y, A)$
+
+(??) TODO
+
+\exercise{2.4.2.13}
+
+TODO
+
+\exercise{2.4.2.14}
+
+TODO
+
+
+\subsection{Finite limits in Set}
+
+\exercise{2.5.1.2}
+
+\ans $X \times_{Z} Y = \set{(x_1,z_1,y_1), (x_2,z_2,y_2), (x_2,z_2,y_4), (x_3,z_2,y_2),
+(x_3,z_2,y_4)}$
+
+
+\exercise{2.5.1.3}
+
+(a)
+\ans Let $X = \set{\Y{1},\R{2},\B{3},\Y{4},\R{5}}; Y = \set{\Y{a},\B{b},\R{c}};$ where
+$C = \set{\R{R},\B{B},\Y{Y}}$ \vsp We have:
+$X \times_C Y = \set{\Y{1a},\Y{4a},\R{2c},\R{5c},\B{3b}}$
+
+(b)
+TODO (obvious).
+
+\exercise{2.5.1.5}
+
+(a) Suppose that $Y = \emptyset$; what can you say about $X \times_Z Y$ ?
+\ans $X \times_Z Y = \emptyset$ \vsp
+
+(b) $Z = {1}$; what can you say about $X \times_Z Y$ ?
+\ans $\forall X,Y : X \times_Z Y = X \times Y$
+
+\vsp
+\vsp
+\vsp
 
 \printbibliography
 
