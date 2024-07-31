@@ -152,7 +152,17 @@ In universal property of products, put $A$ equal to $Y \times X$ and get $\exist
 g:(Y \times X)\to(X \times Y)$. In a similar way, we have $\exists! s:(X \times Y)\to(Y \times X)$.
 We need to show that $g \circ s = id_{(X \times Y)}$ and $s \circ g = id_{(Y\times X)}$.
 
-TODO
+On the following diagram,
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAmAXVJADcBDAGwFcYkQBBAAgB0e8AtvC4AhEAF9S6TLnyEUZAAzU6TVu259BwsZOnY8BIuVLEVDFm0QhdUkBgNyii0+bVXOElTCgBzeESgAGYAThACSC4gOBBIZCCM9ABGMIwACjKG8iAhWL4AFjggNBbq1nwwAB5YcDhwAIRBEnah4ZE0MUgmqpbsfGhYAPrkxQnJqRmORta5BUV6IK0RiFGdiADMJe59PAODxM3BYcvxa5s9ZSD9Qwc0iSnpmU4zeYWHi8dxHbGI3aUe12GXnEQA
+\begin{tikzcd}
+  & A \times B \arrow[ld, "\pi_1"'] \arrow[rd, "\pi_2"]                          &   \\
+A &                                                                              & B \\
+  & A \times B \arrow[uu, "\exists!id"'] \arrow[ru, "\pi_2"'] \arrow[lu, "\pi_1"] &
+\end{tikzcd}
+
+$id = id_{(A \times B)}$ - is the unique identity function. By combining diagrams for $f$ and $g$ we
+reduce the $g \circ f$ to the similar case.
 
 \printbibliography
 
