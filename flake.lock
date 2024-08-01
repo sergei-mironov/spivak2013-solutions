@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1722511345,
-        "narHash": "sha256-wiBbj95n1nczSa6U0HAapL4LDZMNnQA9QcV9OCPQmi8=",
+        "lastModified": 1722518812,
+        "narHash": "sha256-1xSSUEGsHp3cUVjmC3nz2EhTB+Aoub/aIqREGArQmGA=",
         "owner": "sergei-mironov",
         "repo": "aicli",
-        "rev": "a3bc57aa6a31b81acca20cfb2317aaf792d7c7a9",
+        "rev": "349ac2a02a58eb0d140be9037b7a26db6c0d5201",
         "type": "github"
       },
       "original": {
