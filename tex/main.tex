@@ -150,8 +150,8 @@ On the following diagram,
 
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAmAXVJADcBDAGwFcYkQBBAAgB0e8AtvC4AhEAF9S6TLnyEUZAAzU6TVu259BwsZOnY8BIuVLEVDFm0QhdUkBgNyii0+bVXOElTCgBzeESgAGYAThACSC4gOBBIZCCM9ABGMIwACjKG8iAhWL4AFjggNBbq1nwwAB5YcDhwAIRBEnah4ZE0MUgmqpbsfGhYAPrkxQnJqRmORta5BUV6IK0RiFGdiADMJe59PAODxM3BYcvxa5s9ZSD9Qwc0iSnpmU4zeYWHi8dxHbGI3aUe12GXnEQA
 \begin{tikzcd}
-  & A \times B \arrow[ld, "\pi_1"'] \arrow[rd, "\pi_2"]                          &   \\
-A &                                                                              & B \\
+  & A \times B \arrow[ld, "\pi_1"'] \arrow[rd, "\pi_2"]                           &   \\
+A &                                                                               & B \\
   & A \times B \arrow[uu, "\exists!id"'] \arrow[ru, "\pi_2"'] \arrow[lu, "\pi_1"] &
 \end{tikzcd}
 
@@ -169,9 +169,7 @@ Yes, until we consider other types of phones besides cell- and landline ones.
 
 Write the universal property for coproduct in terms of a relationship between..
 
-\ans $Hom_{Set}(X,A) \sqcup Hom_{Set}(Y,A) \cong Hom_{Set}(X \sqcup Y, A)$
-
-(??) TODO
+\ans (TODO: not sure!) $Hom_{Set}(X,A) \sqcup Hom_{Set}(Y,A) \cong Hom_{Set}(X \sqcup Y, A)$
 
 \exercise{2.4.2.13}
 
@@ -210,7 +208,48 @@ TODO (obvious).
 
 \exercise{2.5.1.6}
 
-TODO
+.. Aristotelian space and time ..
+
+$S = R^3;\quad T = R;\quad Y = S \times T;\quad g1 : Y \to S ;\quad g2 : Y \to S$ where $g1,g2$
+projects space-time to its components. $X = \set{1};\quad f_1 : X \to S;\quad f_2 : X \to T$ is a
+set of one element and its space-time projections.
+
+\vsp
+(a) What is the meaning of
+
+\begin{minipage}[t]{0.45\textwidth}
+\[
+\begin{tikzcd}
+W_1 \arrow[r] \arrow[d] & Y \arrow[d,"g_1"] \\
+X \arrow[r,"f_2"] & S
+\end{tikzcd}
+\]
+\end{minipage}
+\quad
+\begin{minipage}[t]{0.45\textwidth}
+\[
+\begin{tikzcd}
+W_2 \arrow[r] \arrow[d] & Y \arrow[d,"g_2"] \\
+X \arrow[r,"f_2"] & S
+\end{tikzcd}
+\]
+\end{minipage}
+
+\ans $1$ is associated with its time and space. $W_1$ yields time points of $Y$ corresponding
+to $1$'s position. $W_2$ yields the space points corresponding to $1$'s time.
+
+\vsp
+(b) Interpret the sets in terms of the center of mass of MIT at the time of its founding.
+
+\ans (TODO: not sure!) Is it just the MIT-relative space and time points?
+
+\exercise{2.5.1.10}
+
+.. Appropriate or misleading olog labels ..
+
+(a) a person whose favorite color is blue - OK
+(b) a dog whose owner is a woman - OK
+(c) a good fit - Nope. We would say that a good fit requires less or equal width.
 
 \vsp
 \vsp
