@@ -1,13 +1,14 @@
 { pkgs
 , litrepl
+, aicli
 , revision ? null
 } :
 let
   local = rec {
 
     inherit (pkgs) python3 zathura evince;
-    inherit (litrepl) litrepl-release gpt4all-cli;
-    inherit (gpt4all-cli) python-gpt4all-cli;
+    inherit (litrepl) litrepl-release;
+    inherit (aicli) python-aicli;
 
     python = python3;
 
@@ -55,7 +56,7 @@ let
       name = "shell-nixos";
       buildInputs = [
         litrepl-release
-        python-gpt4all-cli
+        python-aicli
         pkgs.gitFull
         texlive-dev
         zathura
