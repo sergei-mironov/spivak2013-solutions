@@ -111,6 +111,34 @@ The book \tcite{Spivak2013CategoryTF}.
 \setcounter{section}{2}
 \section*{Chapter 2. The Category of Sets}
 
+\exercise{2.3.3.1}
+
+Create an olog for human nuclear biological families that includes the concept of person, man,
+woman, parent, father, mother, and child. Make sure to label all the arrows, and make sure each
+arrow indicates a valid aspect in the sense of Section 2.3.2.1. Indicate with check-marks the
+diagrams that are intended to commute. If the 2-dimensionality of the page prevents a check-mark
+from being unambiguous, indicate the intended commutativity with an equation.
+
+\ans
+
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQ0YAnOAkAX1LpMufIRTlSxanSat2AW3qFBw7Hj4oATFJkMWbRCADuEJSqEcRG8SVJa9cwx3pcYYHAMsZ1YopIBmRwN2ADN6HAALbi81UU1kHSCafXkjBQgomNUrXwSyABZgtJAAY0isRigBGRgoAHN4IlBQrjMkMhAcCCRJEEZ6ACMYRgAFaz8jRhhQzxSndiwEHNb2xB0unsQ+1OclkBoB4bGJzX6ZzxW2hSQCmm6O+ZCjfau1gFZ7rY3dxYRDoYjcZ5cQgLhYeqRS6WVY3RB3TZIAJPEqvGHXJCfRGIZGyZ4gfYA47A+Kg8GQ6EtDGILEPRAANnu9Eq7EgYDYKOckXo-36gJOIPY5KhsRAsNuXyQjLxJW5vKOQNOZIhIrecNxdOlvyMctF4pxku2nL+Bz5xKVQpVlLF1OldL6wzA1UQAFoAOydbUE+X8kk2S0U01wCqzJBafiUfhAA
+\begin{tikzcd}
+                                                            & person                                                  &                                                               \\
+man \arrow[ru, "is"]                                        &                                                         & woman \arrow[lu, "is"]                                        \\
+                                                            & parent \arrow[dd, "has"] \arrow[uu, "is"']              &                                                               \\
+father \arrow[uu, "is"] \arrow[ru, "is"] \arrow[rd, "has"'] &                                                         & mother \arrow[uu, "is"'] \arrow[lu, "is"'] \arrow[ld, "has"'] \\
+                                                            & child \arrow[uuuu, "is"', bend right=90, shift right=18] &                                                              
+\end{tikzcd}
+\end{center}
+
+Commutative square examples:
+\begin{itemize}
+\item "parent is person" $\circ$ "mother is parent" $=$ "woman is person" $\circ$ "mother is woman"
+\item "mother has child" $=$ "parent has child" $\circ$ "mother is parent"
+\item "child is person" $\circ$ "parent has child" $\ne$ "parent is person"
+\end{itemize}
+
 \setcounter{subsection}{3}
 \subsection{Products and coproducts}
 
@@ -254,8 +282,56 @@ to $1$'s position. $W_2$ yields the space points corresponding to $1$'s time.
 
 \exercise{2.5.1.11}
 
-TODO
+(a) Consider your olog from Exercise 2.3.3.1. Are any of the commutative
+squares there actually pullback squares?
 
+\ans
+\vsp
+
+Yes, for example: "father" $=$ "man" $\times_{person}$ "parent"
+
+\begin{center}
+\begin{tikzcd}
+\fbox{father} \arrow[r, "is"] \arrow[d, "is"] & \fbox{man} \arrow[d,"is"] \\
+\fbox{parent} \arrow[r,"is"]                  & \fbox{person}
+\end{tikzcd}
+\end{center}
+
+(b) Now use ologs with products and pullbacks to define what a brother is and
+what a sister is:
+
+\ans
+\vsp
+
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACMAnCHACxk4gAvqXSZc+QigCM5KrUYs2AY15YGUYaJAZseAkTLT59Zq0QgAtnUIixeyUVnHqppRYyWt9iQZmkAJhNFcx0BOAM7HXF9KWQA0hcFMzYAHVTgABV0oW9ohz94wOCUi3Ss0gAxHOF5GCgAc3giUAAzbi9EAGZqHAgkABZXELTUtCwAfWk89ohOnpA+pABWYdKQdPGJgJmOld7+xAA2NfcQLE0o2c6hxcOT5LOwCeBVXKu9xDI7pFlH0KwCA+cyQ3yWiAS-zYgN2IIhByQCzcoTQsM6f3BSJGHlqQiAA
+\begin{tikzcd}
+brother \arrow[r, "is"] \arrow[d, "is"] & child \arrow[d, "p"]                      &                       \\
+man \arrow[r, "p"]                      & pom \arrow[d, "\pi_1"] \arrow[r, "\pi_2"] & \{T\} \arrow[d, "id"] \\
+                                        & person \arrow[r, "n_{ch}"]                & {\{T,F\}}            
+\end{tikzcd}
+\end{center}
+
+where: $pom$ stands for "parent of many", $p$ is "has as parent" and $n_{ch}$ is "number of children"
+
+\exercise{2.5.1.13}
+
+Pullback diagram in which the fiber product is isomorphic to the preimage of $y\inY$.
+
+\ans
+\vsp
+
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAE0A9YAWgEYAvgB0heALbwABHwD6ATxADS6TLnyEUfclVqMWbWQqUrseAkTJ8d9Zq0QgAGouUgMp9US1XqN-ffaKOjBQAObwRKAAZgBOEGJIWiA4EEgAzD56diBYUM5RsfGIAEzUyWkZtmyReSAxcUhkSSmIib5ZImhYMkU1dYWNZcUVfiAdXXyBAkA
+\begin{tikzcd}
+Y^{-1}\times \set{y} \arrow[r, "\pi_2"] \arrow[d, "\pi_1"] & \set{y} \arrow[d, "id"] \\
+X \arrow[r, "f"]                                       & Y                  
+\end{tikzcd}
+\end{center}
+
+\exercise{2.5.1.15}
+
+TODO
 
 \vsp
 \vsp
