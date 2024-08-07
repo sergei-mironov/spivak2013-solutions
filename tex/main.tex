@@ -51,7 +51,7 @@ breaklines=true
 \newcommand{\tcite}[1]{\textit{(\citefield{#1}{year}, \citeauthor{#1})}\:\textit{``\citefield{#1}{title}''}\:\cite{#1}}
 \newcommand{\exercise}[1]{\subsubsection*{#1}}
 \newcommand{\ans}[0]{\vsp\textbf{Answer: }}
-\newcommand{\unsure}[0]{TODO: \textbf{unsure}}
+\newcommand{\unsure}[0]{TODO: (\textbf{unsure}) }
 
 \newcommand{\JProg}{\mathbb{J}}
 \newcommand{\AST}{\mathbb{AST}}
@@ -365,7 +365,34 @@ The general impression is the following:
 
 \exercise{2.5.1.18}
 
-TODO
+(a) Create an olog that defines two people to be 'of approximately the same
+height' if and only if their height difference is less than half an inch, using
+a pullback.
+
+\ans
+
+\begin{center}
+ % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkAjFVqMWbAELdeIDNjwEiI8uPrNWiEAGE5fJYNWkx1TVJ0ARAwv7KhyAEzrzk7SACitxQJUoXMwktNgAxbnEYKABzeCJQADMAJwgAWyQyEBwIJCceRJT0xBcsnMQAFnyQZLSkcupspABWKpqigGYGspb5NqQ1UqR21sLcrqGR2sRMxsQRLgouIA
+\begin{tikzcd}
+  \set{((p_1,p_2),\Delta)|p_1,p_2 \in \text{people}, \Delta \in \mathbb{R}} \arrow[r, "\pi_2"] \arrow[d, "\pi_1"] & \set{\Delta|-0.5 < \Delta < 0.5} \arrow[d, "is"] \\
+  \fbox{\text{pair of people}} \arrow[r, "h_2 - h_1"]           & \mathbb{R}
+\end{tikzcd}
+\end{center}
+
+(b) In the same olog, make a box for those people whose height is approximately
+the same as a person named 'The Virgin Mary'. You may need to use images
+
+\ans
+
+\begin{center}
+ % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkAjFVqMWbAELdeIDNjwEiI8uPrNWiEAGE5fJYNWkx1TVJ0ARAwv7KhyAEzrzk7SACitxQJUoXMwktNgAxbnEYKABzeCJQADMAJwgAWyQyEBwIJCceRJT0xBcsnMQAFnyQZLSkcupspABWKpqigGYGspb5NqQ1UqR21sLcrqGR2sRMxsQRLgouIA
+\begin{tikzcd}
+  \fbox{\text{people of approx Virgin Mary height}} \ar[r, "\pi_2"] \ar[d, "\pi_1"] & \set{((p_1,p_2),\Delta)|...} \arrow[r, "\pi_2"] \arrow[d, "\pi_1"] & \set{\Delta|-0.5 < \Delta < 0.5} \arrow[d, "is"] \\
+  \set{(\fbox{The Virgin Mary},p_2)|p_2 \in \text{people}} \ar[r, "is"] & \fbox{\text{pair of people}} \arrow[r, "h_2 - h_1"]           & \mathbb{R}
+\end{tikzcd}
+\end{center}
+
+\unsure We did not use images, despite the textbook suggestion.
 
 \vsp
 \vsp
