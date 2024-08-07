@@ -22,6 +22,7 @@
 \setlength{\algomargin}{10pt}
 \newcommand{\REM}[1]{\tcp*{\parbox[t]{2.0in}{\raggedright #1}}}
 \usepackage[normalem]{ulem}
+\usepackage{varwidth}
 
 \usepackage{biblatex}
 \addbibresource{main.bib}
@@ -50,6 +51,7 @@ breaklines=true
 \newcommand{\tcite}[1]{\textit{(\citefield{#1}{year}, \citeauthor{#1})}\:\textit{``\citefield{#1}{title}''}\:\cite{#1}}
 \newcommand{\exercise}[1]{\subsubsection*{#1}}
 \newcommand{\ans}[0]{\vsp\textbf{Answer: }}
+\newcommand{\unsure}[0]{TODO: \textbf{unsure}}
 
 \newcommand{\JProg}{\mathbb{J}}
 \newcommand{\AST}{\mathbb{AST}}
@@ -197,7 +199,7 @@ Yes, until we consider other types of phones besides cell- and landline ones.
 
 Write the universal property for coproduct in terms of a relationship between..
 
-\ans (TODO: not sure!) $Hom_{Set}(X,A) \sqcup Hom_{Set}(Y,A) \cong Hom_{Set}(X \sqcup Y, A)$
+\ans \unsure $Hom_{Set}(X,A) \sqcup Hom_{Set}(Y,A) \cong Hom_{Set}(X \sqcup Y, A)$
 
 \exercise{2.4.2.13}
 
@@ -269,7 +271,7 @@ to $1$'s position. $W_2$ yields the space points corresponding to $1$'s time.
 \vsp
 (b) Interpret the sets in terms of the center of mass of MIT at the time of its founding.
 
-\ans (TODO: not sure!) Is it just the MIT-relative space and time points?
+\ans \unsure Is it just the MIT-relative space and time points?
 
 \exercise{2.5.1.10}
 
@@ -308,15 +310,16 @@ what a sister is:
 \begin{tikzcd}
 brother \arrow[r, "is"] \arrow[d, "is"] & child \arrow[d, "p"]                      &                       \\
 man \arrow[r, "p"]                      & pom \arrow[d, "\pi_1"] \arrow[r, "\pi_2"] & \{T\} \arrow[d, "id"] \\
-                                        & person \arrow[r, "n_{ch}"]                & {\{T,F\}}            
+                                        & person \arrow[r, "n_{ch}"]                & {\{T,F\}}
 \end{tikzcd}
 \end{center}
 
-where: $pom$ stands for "parent of many", $p$ is "has as parent" and $n_{ch}$ is "number of children"
+where: $pom$ stands for "parent of many", $p$ is "has as parent" and $n_{ch}$
+is "number of children"
 
 \exercise{2.5.1.13}
 
-Pullback diagram in which the fiber product is isomorphic to the preimage of $y\inY$.
+Pullback diagram in which the fiber product is isomorphic to the preimage of $y \in Y$.
 
 \ans
 \vsp
@@ -324,12 +327,43 @@ Pullback diagram in which the fiber product is isomorphic to the preimage of $y\
 \begin{center}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAE0A9YAWgEYAvgB0heALbwABHwD6ATxADS6TLnyEUfclVqMWbWQqUrseAkTJ8d9Zq0QgAGouUgMp9US1XqN-ffaKOjBQAObwRKAAZgBOEGJIWiA4EEgAzD56diBYUM5RsfGIAEzUyWkZtmyReSAxcUhkSSmIib5ZImhYMkU1dYWNZcUVfiAdXXyBAkA
 \begin{tikzcd}
-Y^{-1}\times \set{y} \arrow[r, "\pi_2"] \arrow[d, "\pi_1"] & \set{y} \arrow[d, "id"] \\
-X \arrow[r, "f"]                                       & Y                  
+Y^{-1} \times \set{y} \arrow[r, "\pi_2"] \arrow[d, "\pi_1"] & \set{y} \arrow[d, "id"] \\
+X \arrow[r, "f"]                                            & Y
 \end{tikzcd}
 \end{center}
 
 \exercise{2.5.1.15}
+
+Create an olog whose underlying shape is a commutative square. Now add the
+fiber product so that the shape is the same as that of Diagram (2.32). Assign
+English labels to the projections and to the dotted map A, such that these
+labels are as canonical as possible.
+
+\ans
+
+\unsure
+
+The general impression is the following:
+\begin{itemize}
+  \item The commutative square can be visualized as a pyramid in a 3D space.
+  \item The pullback corresponds to a 2D plane with two axes.
+  \item The pullback over one-element set corresponds to a 2D plane with two orthogonal axes.
+  \item The projections $\pi_1$ and $\pi_2$ play the role of parallel
+        projections from a point in the plane to its axes.
+  \item The map $A \to (D \times_P W)$ acts as a projection from a point in 3D space to the plane.
+\end{itemize}
+
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAAUB1AEQHkQAvqXSZc+QigAMpAExVajFm26DhIDNjwEiM2fPrNWiEJ1UjN4omQDM+xUY4wATnG1DzY7SjKS7htjz8AvIwUADm8ESgAGZOEAC2SAAs1DgQSGQgAEYwYFBIALTW0gr+xgA65WhYAPrEZiCxCcmp6Yi62bn5iMXUBkoVVbUyINQMdDkM7KJaEiBOWGEAFjgNTYmImWlI1u6NcRsd2z1760glx5n9DtUAxjX5pwfnrUgd45PTFl7ziyujpQG6iw92AAHcBGtnogLm0UoCbiCasA0HQsE5IcEBEA
+\begin{tikzcd}
+             & \fbox{($D \times_P W$) \text{woman dog owner}} \arrow[ldd, "\pi_1", bend right] \arrow[rdd, "\pi_2"', bend left]        &              \\
+             & \fbox{(A)\begin{varwidth}{\textwidth} blond woman \\ dog owner \end{varwidth}} \arrow[ld, "has"] \arrow[rd, "is"'] \arrow[u, "\langle\text{has, is} \rangle"] &              \\
+\fbox{(D) dog} \arrow[rd] &                                                                                        & \fbox{(W) woman} \arrow[ld] \\
+             & \fbox{(P) person}                                                                                   &
+\end{tikzcd}
+\end{center}
+
+\exercise{2.5.1.18}
 
 TODO
 
