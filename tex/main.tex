@@ -372,7 +372,7 @@ a pullback.
 \ans
 
 \begin{center}
- % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkAjFVqMWbAELdeIDNjwEiI8uPrNWiEAGE5fJYNWkx1TVJ0ARAwv7KhyAEzrzk7SACitxQJUoXMwktNgAxbnEYKABzeCJQADMAJwgAWyQyEBwIJCceRJT0xBcsnMQAFnyQZLSkcupspABWKpqigGYGspb5NqQ1UqR21sLcrqGR2sRMxsQRLgouIA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkAjFVqMWbAELdeIDNjwEiI8uPrNWiEAGE5fJYNWkx1TVJ0ARAwv7KhyAEzrzk7SACitxQJUoXMwktNgAxbnEYKABzeCJQADMAJwgAWyQyEBwIJCceRJT0xBcsnMQAFnyQZLSkcupspABWKpqigGYGspb5NqQ1UqR21sLcrqGR2sRMxsQRLgouIA
 \begin{tikzcd}
   \set{((p_1,p_2),\Delta)|p_1,p_2 \in \text{people}, \Delta \in \mathbb{R}} \arrow[r, "\pi_2"] \arrow[d, "\pi_1"] & \set{\Delta|-0.5 < \Delta < 0.5} \arrow[d, "is"] \\
   \fbox{\text{pair of people}} \arrow[r, "h_2 - h_1"]           & \mathbb{R}
@@ -385,7 +385,7 @@ the same as a person named 'The Virgin Mary'. You may need to use images.
 \ans
 
 \begin{center}
- % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkAjFVqMWbAELdeIDNjwEiI8uPrNWiEAGE5fJYNWkx1TVJ0ARAwv7KhyAEzrzk7SACitxQJUoXMwktNgAxbnEYKABzeCJQADMAJwgAWyQyEBwIJCceRJT0xBcsnMQAFnyQZLSkcupspABWKpqigGYGspb5NqQ1UqR21sLcrqGR2sRMxsQRLgouIA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkAjFVqMWbAELdeIDNjwEiI8uPrNWiEAGE5fJYNWkx1TVJ0ARAwv7KhyAEzrzk7SACitxQJUoXMwktNgAxbnEYKABzeCJQADMAJwgAWyQyEBwIJCceRJT0xBcsnMQAFnyQZLSkcupspABWKpqigGYGspb5NqQ1UqR21sLcrqGR2sRMxsQRLgouIA
 \begin{tikzcd}
   \fbox{\text{people of approx Virgin Mary height}} \ar[r, "\pi_2"] \ar[d, "\pi_1"] & \set{((p_1,p_2),\Delta)|...} \arrow[r, "\pi_2"] \arrow[d, "\pi_1"] & \set{\Delta|-0.5 < \Delta < 0.5} \arrow[d, "is"] \\
   \set{(\fbox{The Virgin Mary},p_2)|p_2 \in \text{people}} \ar[r, "is"] & \fbox{\text{pair of people}} \arrow[r, "h_2 - h_1"]           & \mathbb{R}
@@ -396,8 +396,18 @@ the same as a person named 'The Virgin Mary'. You may need to use images.
 
 \exercise{2.5.1.19}
 
-TODO
+Let $W = X \times_Z Y$ and $W' = X' \times_{Z'} Y'$, and form the diagram
+to the right. Use the universal property of fiber products to construct a map
+$W \to W'$ such that all squares commute
 
+\ans
+
+Let $WX = \pi_1$, $WY = \pi_2$, $W'X' = \pi_1'$, $W'Y' = \pi_2'$.  Define $f: W
+\to W' = (x,y)_z \mapsto (XX'(x),YY'(y))_{ZZ'(z)}$. We want to show that it
+makes $WW'Y'Y$ to commute. Indeed, $\pi_2' \circ f = YY' \circ \pi_2 = y
+\mapsto YY'(y)$.  By analogy, it also commutes $WW'X'X$. The triangles $WW'Y'$
+and $WW'X'$ also commute. The universal property for fiber products says that
+we can only have one such mapping, thus this is the answer.
 
 \vsp
 \vsp
