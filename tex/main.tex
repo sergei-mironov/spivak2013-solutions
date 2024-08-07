@@ -50,7 +50,7 @@ breaklines=true
 \newcommand{\vsp}[0]{\vspace*{10pt}\par}
 \newcommand{\tcite}[1]{\textit{(\citefield{#1}{year}, \citeauthor{#1})}\:\textit{``\citefield{#1}{title}''}\:\cite{#1}}
 \newcommand{\exercise}[1]{\subsubsection*{#1}}
-\newcommand{\ans}[0]{\vsp\textbf{Answer: }}
+\newcommand{\ans}[0]{\vsp\textbf{Answer: }\vsp}
 \newcommand{\unsure}[0]{TODO: (\textbf{unsure}) }
 
 \newcommand{\JProg}{\mathbb{J}}
@@ -151,9 +151,11 @@ How many elements does the $\set{a,b,c,d} * \set{1,2,3}$ have?
 
 \exercise{2.4.1.8}
 \ans
-\vsp (a) No, because $a(b + c) \neq (a+b)c$.
-\vsp (b) No, because $x*0 \neq x$.
-\vsp (c) Yes.
+(a) No, because $a(b + c) \neq (a+b)c$.
+\vsp
+(b) No, because $x*0 \neq x$.
+\vsp
+(c) Yes.
 
 \exercise{2.4.1.15}
 
@@ -278,9 +280,11 @@ to $1$'s position. $W_2$ yields the space points corresponding to $1$'s time.
 .. Appropriate or misleading olog labels ..
 
 \ans
-\vsp (a) a person whose favorite color is blue - OK
-\vsp (b) a dog whose owner is a woman - OK
-\vsp (c) a good fit - Nope. We would say that a good fit requires less or equal width.
+(a) a person whose favorite color is blue - OK
+\vsp
+(b) a dog whose owner is a woman - OK
+\vsp
+(c) a good fit - Nope. We would say that a good fit requires less or equal width.
 
 \exercise{2.5.1.11}
 
@@ -288,8 +292,6 @@ to $1$'s position. $W_2$ yields the space points corresponding to $1$'s time.
 squares there actually pullback squares?
 
 \ans
-\vsp
-
 Yes, for example: "father" $=$ "man" $\times_{person}$ "parent"
 
 \begin{center}
@@ -303,7 +305,6 @@ Yes, for example: "father" $=$ "man" $\times_{person}$ "parent"
 what a sister is:
 
 \ans
-\vsp
 
 \begin{center}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACMAnCHACxk4gAvqXSZc+QigCM5KrUYs2AY15YGUYaJAZseAkTLT59Zq0QgAtnUIixeyUVnHqppRYyWt9iQZmkAJhNFcx0BOAM7HXF9KWQA0hcFMzYAHVTgABV0oW9ohz94wOCUi3Ss0gAxHOF5GCgAc3giUAAzbi9EAGZqHAgkABZXELTUtCwAfWk89ohOnpA+pABWYdKQdPGJgJmOld7+xAA2NfcQLE0o2c6hxcOT5LOwCeBVXKu9xDI7pFlH0KwCA+cyQ3yWiAS-zYgN2IIhByQCzcoTQsM6f3BSJGHlqQiAA
@@ -322,7 +323,6 @@ is "number of children"
 Pullback diagram in which the fiber product is isomorphic to the preimage of $y \in Y$.
 
 \ans
-\vsp
 
 \begin{center}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAE0A9YAWgEYAvgB0heALbwABHwD6ATxADS6TLnyEUfclVqMWbWQqUrseAkTJ8d9Zq0QgAGouUgMp9US1XqN-ffaKOjBQAObwRKAAZgBOEGJIWiA4EEgAzD56diBYUM5RsfGIAEzUyWkZtmyReSAxcUhkSSmIib5ZImhYMkU1dYWNZcUVfiAdXXyBAkA
@@ -380,7 +380,7 @@ a pullback.
 \end{center}
 
 (b) In the same olog, make a box for those people whose height is approximately
-the same as a person named 'The Virgin Mary'. You may need to use images
+the same as a person named 'The Virgin Mary'. You may need to use images.
 
 \ans
 
@@ -393,6 +393,11 @@ the same as a person named 'The Virgin Mary'. You may need to use images
 \end{center}
 
 \unsure We did not use images, despite the textbook suggestion.
+
+\exercise{2.5.1.19}
+
+TODO
+
 
 \vsp
 \vsp
