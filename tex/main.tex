@@ -47,7 +47,7 @@ breaklines=true
 \newcommand{\B}[1]{\begingroup\color{blue}#1\endgroup}
 \newcommand{\Y}[1]{\begingroup\color{yellow}#1\endgroup}
 \newcommand{\Z}{\mathbb{Z}}
-\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rational}{\mathbb{R}}
 
 \newcommand{\vsp}[0]{\vspace*{10pt}\par}
 \newcommand{\tcite}[1]{\textit{(\citefield{#1}{year}, \citeauthor{#1})}\:\textit{``\citefield{#1}{title}''}\:\cite{#1}}
@@ -58,7 +58,7 @@ breaklines=true
 \newcommand{\JProg}{\mathbb{J}}
 \newcommand{\AST}{\mathbb{AST}}
 \newcommand{\TNET}{\mathbb{TNET}}
-\newcommand{\CV}{\mathbb{R}^N}
+\newcommand{\CV}{\Rational^N}
 % Define \set{} command. TODO: Looks too complicated!
 \DeclarePairedDelimiterX{\set}[1]{\{}{\}}{\setargs{#1}}
 \NewDocumentCommand{\setargs}{>{\SplitArgument{1}{;}}m}
@@ -376,8 +376,8 @@ a pullback.
 \begin{center}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkAjFVqMWbAELdeIDNjwEiI8uPrNWiEAGE5fJYNWkx1TVJ0ARAwv7KhyAEzrzk7SACitxQJUoXMwktNgAxbnEYKABzeCJQADMAJwgAWyQyEBwIJCceRJT0xBcsnMQAFnyQZLSkcupspABWKpqigGYGspb5NqQ1UqR21sLcrqGR2sRMxsQRLgouIA
 \begin{tikzcd}
-  \set{((p_1,p_2),\Delta)|p_1,p_2 \in \text{people}, \Delta \in \mathbb{R}} \arrow[r, "\pi_2"] \arrow[d, "\pi_1"] & \set{\Delta|-0.5 < \Delta < 0.5} \arrow[d, "is"] \\
-  \fbox{\text{pair of people}} \arrow[r, "h_2 - h_1"]           & \mathbb{R}
+  \set{((p_1,p_2),\Delta)|p_1,p_2 \in \text{people}, \Delta \in \Rational} \arrow[r, "\pi_2"] \arrow[d, "\pi_1"] & \set{\Delta|-0.5 < \Delta < 0.5} \arrow[d, "is"] \\
+  \fbox{\text{pair of people}} \arrow[r, "h_2 - h_1"]           & \Rational
 \end{tikzcd}
 \end{center}
 
@@ -390,7 +390,7 @@ the same as a person named 'The Virgin Mary'. You may need to use images.
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkAjFVqMWbAELdeIDNjwEiI8uPrNWiEAGE5fJYNWkx1TVJ0ARAwv7KhyAEzrzk7SACitxQJUoXMwktNgAxbnEYKABzeCJQADMAJwgAWyQyEBwIJCceRJT0xBcsnMQAFnyQZLSkcupspABWKpqigGYGspb5NqQ1UqR21sLcrqGR2sRMxsQRLgouIA
 \begin{tikzcd}
   \fbox{\text{people of approx Virgin Mary height}} \ar[r, "\pi_2"] \ar[d, "\pi_1"] & \set{((p_1,p_2),\Delta)|...} \arrow[r, "\pi_2"] \arrow[d, "\pi_1"] & \set{\Delta|-0.5 < \Delta < 0.5} \arrow[d, "is"] \\
-  \set{(\fbox{The Virgin Mary},p_2)|p_2 \in \text{people}} \ar[r, "is"] & \fbox{\text{pair of people}} \arrow[r, "h_2 - h_1"]           & \mathbb{R}
+  \set{(\fbox{The Virgin Mary},p_2)|p_2 \in \text{people}} \ar[r, "is"] & \fbox{\text{pair of people}} \arrow[r, "h_2 - h_1"]           & \Rational
 \end{tikzcd}
 \end{center}
 
@@ -437,11 +437,11 @@ We follow the second way.
 
 \begin{center}
 \begin{tikzcd}[column sep=3cm]
-\text{Authors} \arrow[r, "\text{num of papers}", "\text{const}_1"', Rightarrow] & \mathbb{R}
+\text{Authors} \arrow[r, "\text{num of papers}", "\text{const}_1"', Rightarrow] & \Rational
 \end{tikzcd}
 \end{center}
 
-where $const_1 : \text{authors} \to \mathbb{R}$ maps all authors to $1$.
+where $const_1 : \text{authors} \to \Rational$ maps all authors to $1$.
 
 \exercise{2.5.3.4}
 
@@ -514,9 +514,9 @@ symmetric and transitive. So, yes, $\sim$ is an equivalence relation.
 
 \exercise{2.6.1.9}
 
-Consider the set R of real numbers. Draw the coordinate plane $\mathbb{R}
-\times \mathbb{R}$, give it coordinates $x$ and $y$. A binary relation on
-$\mathbb{R}$ is a subset $S \subseteq \mathbb{R} \times \mathbb{R}$, which can
+Consider the set R of real numbers. Draw the coordinate plane $\Rational
+\times \Rational$, give it coordinates $x$ and $y$. A binary relation on
+$\Rational$ is a subset $S \subseteq \Rational \times \Rational$, which can
 be drawn as a set of points in the plane.
 
 (a) Draw the relation $\set{(x,y)|y=x^2}$.
@@ -530,7 +530,7 @@ Lemma 2.6.1.7) by the empty set. Draw $S$ as a subset of the plane.
 Draw $S_1$ in the plane. Highlight the equivalence class containing $(1,2)$.
 
 (e) The reflexivity property and the symmetry property have pleasing
-visualizations in $\R \times \mathbb{R}$; what are they?
+visualizations in $\Rational \times \Rational$; what are they?
 
 (f) Is there a nice heuristic for visualizing the transitivity property?
 
