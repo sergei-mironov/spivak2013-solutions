@@ -28,3 +28,6 @@ result*
 *.dvi
 *_latexmk
 *.pyg
+*.bbl*
+*.bcf*
+*.run.xml
