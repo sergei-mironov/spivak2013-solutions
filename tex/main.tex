@@ -542,14 +542,27 @@ visualizations in $\Rational \times \Rational$; what are they?
 \begin{python}
 import matplotlib.pyplot as plt
 import numpy as np
-x = np.linspace(-10, 10, 100)
+D = 3
+x = np.linspace(-D, D, 100)
 y = x**2
+plt.close('all')
+plt.figure()
 plt.plot(x, y)
 plt.fill_between(x, y, max(y), where=(y > 0), color='none', hatch='/', edgecolor='b', linewidth=0.5)
 plt.xlabel('x')
 plt.ylabel('y')
+plt.xticks(np.arange(-D, D+1, 1))          # Set x-axis to cover integer values
+plt.yticks(np.arange(-2, max(y) + 1, 1))    # Set y-axis to cover integer values
+plt.grid(True)
 plt.title('Parabola: y = x^2')
 plt.grid(True)
+for ix in range(-D, D+1):
+  for iy in range(-2, D**2+1):
+    if 1<=ix<=3 and 1<=iy<=3:
+      plt.plot(ix, iy, 'bo')  # 'ro' defines red dots
+    if ix==iy:
+      plt.plot(ix, iy, 'ro')  # 'ro' defines red dots
+
 plt.savefig('img/parabola.png')
 \end{python}
 \begin{result}
@@ -560,9 +573,19 @@ plt.savefig('img/parabola.png')
 \includegraphics[width=0.4\textwidth]{img/parabola.png}
 \end{center}
 
-(a) - the red line
+(a) - the line
 
 (b) - the filled area
+
+(c) - red dots
+
+(d) - square of blue dots, including the diagonal
+
+(e) - The representation of a reflexivity relation in rational numbers is the diagonal line on a 2D
+plane. The representation of a symmetry of a set on a 2D plane is the set itself and its mirror
+image across the diagonal
+
+(f)
 
 TODO
 
