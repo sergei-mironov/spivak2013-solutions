@@ -30,6 +30,7 @@
 \usepackage{listings}
 \usepackage{tikz-cd}
 \usepackage{enumitem}
+\usepackage{tikzsymbols}
 
 \lstset{
 basicstyle=\small\ttfamily,
@@ -48,6 +49,7 @@ breaklines=true
 \newcommand{\G}[1]{\begingroup\color{green}#1\endgroup}
 \newcommand{\B}[1]{\begingroup\color{blue}#1\endgroup}
 \newcommand{\Y}[1]{\begingroup\color{yellow}#1\endgroup}
+\newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Rational}{\mathbb{R}}
 
@@ -623,6 +625,41 @@ there exists an arrow connecting $x$ to $y$.
     fully connected graph $g'$ formed by the vertices of $g$.
 \ei A set of disjoint graphs.
 \ee
+
+\exercise{2.6.2.4}
+
+(The picture) Write down the cardinality of $P \cong \underline{n}$ as a natural
+number $n \in \N$.
+
+\ans
+
+$1$, because the described $W \to X$ and $W \to Y$ make all elements of $X$ and
+$Y$ equivalent.
+
+\exercise{2.6.2.5}
+
+Suppose that $W = \emptyset$; what can you say about $X \sqcup_W Z$?
+
+\ans
+
+$X \sqcup_W Z$ becomes $X \sqcup Z$ because $(X \sqcup W \sqcup Z)/\sim$ is
+filled with distinct elements of both $X$ and $Z$.
+
+\exercise{2.6.2.6}
+
+Let $W := \N = \set{0,1,2,... }$ denote the set of natural numbers, let $X =
+\mathbbZ$ denote the set of integers, and let $Y = \set{\Smiley}$ denote a
+one-element set. Define $f : W \to X$ by $f(w) = -(w+1)$, and define $g: W \to Y$ to be
+the unique map. Describe the set $X \sqcup_W Y$ .
+
+\ans
+
+$X \sqcup_W Y = \set{..., -2, -1, \Laughey}$ where $\Laughey$ is an equivalence class for
+all $\set{\Laughey, 0, 1, 2, ...}$.
+
+\exercise{2.6.2.7}
+
+TODO
 
 \vsp
 \vsp

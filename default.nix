@@ -48,7 +48,7 @@ let
           beamerposter qcircuit xypic standalone preview amsmath thmtools tocloft tocbibind varwidth
           beamer tabulary ifoddpage relsize svg transparent stix fontspec overpic eepic appendix
           raleway fontawesome lipsum enumitem ly1 biblatex tcolorbox csquotes listingsutf8 biber
-          natbib biblatex-apa comment fancyvrb tikz-cd;
+          natbib biblatex-apa comment fancyvrb tikz-cd luatex tikzsymbols;
         }
       );
 
