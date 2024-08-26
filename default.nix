@@ -34,6 +34,7 @@ let
         bpython
         psutil
         pygments
+        lark
       ]
     );
 
