@@ -52,6 +52,7 @@ breaklines=true
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Rational}{\mathbb{R}}
+\newcommand{\Rat}{\mathbb{R}}
 
 \newcommand{\vsp}[0]{\vspace*{10pt}\par}
 \newcommand{\tcite}[1]{\textit{(\citefield{#1}{year}, \citeauthor{#1})}\:\textit{``\citefield{#1}{title}''}\:\cite{#1}}
@@ -465,9 +466,9 @@ $Eq(f,g)$ such that everything commute, in particular, $\pi \circ u = p$.
 \begin{center}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBmAXVJADcBDAGwFcYkQBNEAX1PU1z5CKMgCZqdJq3YANHnxAZseAkTIBGCQxZtEIAILz+yoWtLEtU3SACiARwAUAM1IBzAJQ8JMKK-hFQJwAnCABbJFEaHAgkcl5AkPDESJBopHV4kGCw9KiYxDIQRiwwaygIZgAjRjYaAAsYeigkMGZGRij6LEZ2SFKjLMTYvNyQSpgwZsQAWgA2AHZuSm4gA
 \begin{tikzcd}
-{Eq(f,g)} \arrow[dd, "\pi", bend right=67]            \\
-A \arrow[u, "\exists!u"] \arrow[d, "p"]        \\
-X \arrow[d, Rightarrow, "g", "f"']             \\
+{Eq(f,g)} \arrow[dd, "\pi", bend right=67]      \\
+A \arrow[u, dashed, "\exists!u"] \arrow[d, "p"] \\
+X \arrow[d, Rightarrow, "g", "f"']              \\
 Y
 \end{tikzcd}
 \end{center}
@@ -681,12 +682,12 @@ R \to X$ and $\pi_2 \circ i: R \to X$.
 
 \exercise{2.6.3.2}
 
-Let $X = R$ be the set of real numbers. What is the coequalizer of the
-two maps $X \to X$ given by $x \mapsto x$ and $x \mapsto (x + 1)$ respectively?
+Let $X = R$ be the set of real numbers. What is the coequalizer of the two maps
+$X \to X$ given by $f = x \mapsto x$ and $g = x \mapsto (x + 1)$ respectively?
 
 \ans
 
-TODO
+The coequalizer $Coeq(f,g) \sim [0,1) \subset \Rat$.
 
 \exercise{2.6.3.3}
 
@@ -694,7 +695,18 @@ Find a universal property enjoyed by the coequalizer of two arrows.
 
 \ans
 
-TODO
+For any set $A$, function $f$ and $g$, there exists unique $u$ mapping $A$ to
+$Coeq(f,g)$ such that everything commute, in particular, $u \circ i = q$.
+
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBmAXVJADcBDAGwFcYkQBhCGARwAoAZqQDmAShABfUuky58hFGQBM1Ok1bsAgpOkgM2PASJkAjKoYs2iEAE0dMg-OOli59VZAANSaphRh8ESgAgBOEAC2SGQgOBBIJjSMWGAeUPRwABZ+9iChEUjkNLFISonJqRDMAEaMbDRZ9FBIYMyMjEX0WIzskCk5eZGIpTFxiCZSwWGDw8WI0VUwYE2IAGwA7BKUEkA
+\begin{tikzcd}
+X \arrow[d, Rightarrow, "g", "f"']             \\
+Y \arrow[d, "q"] \arrow[dd, bend left=67, "i"] \\
+A                                              \\
+{Coeq(f,g)} \arrow[u, dashed, "\exists!u"]
+\end{tikzcd}
+\end{center}
 
 
 \vsp
