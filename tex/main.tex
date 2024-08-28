@@ -736,7 +736,9 @@ that is, such that $f$ is a retract section but not an isomorphism.
 
 \ans
 
-TODO
+Any $X$ and $Y$ meet this condition if $|X| < |Y|$. For example, mothers and
+their children. We may say that $f:X \to Y$ maps mothers to their first
+children, while $g:Y \to X$ maps children to their mothers.
 
 \exercise{2.7.2.2}
 
@@ -746,7 +748,8 @@ one or both are empty), is it always true that $|B^A| = |B|^{|A|}$?
 
 \ans
 
-TODO
+The statement is true when both sets are non-empty and if only one set is empty.
+When both sets are empty, it is true if we assume that $0^0 = 0$.
 
 \exercise{2.7.2.4}
 
@@ -759,6 +762,21 @@ Let $X = \set{1, 2}$, $A = \set{a, b}$, and $Y = \set{x, y}$
     2.7.2.3.
 \ee
 
+\ans
+
+\eb E.g.
+    $l_1 = \set{(1,a) \mapsto x, (1,b) \mapsto x, (2,a) \mapsto x, (2,b) \mapsto x}$,
+    $l_2 = \set{(1,a) \mapsto x, (1,b) \mapsto x, (2,a) \mapsto x, (2,b) \mapsto y}$,
+    $l_3 = \set{(1,a) \mapsto x, (1,b) \mapsto x, (2,a) \mapsto y, (2,b) \mapsto x}$
+\ei There are:
+    $f_{xx} = \set{a \mapsto x, b \mapsto x}$,
+    $f_{xy} = \set{a \mapsto x, b \mapsto y}$,
+    $f_{yx} = \set{a \mapsto y, b \mapsto x}$,
+    $f_{yy} = \set{a \mapsto x, b \mapsto y}$
+\ei $\phi(l_1) = \set{1 \mapsto f_{xx}, 2 \mapsto f_{xx}}$,
+    $\phi(l_2) = \set{1 \mapsto f_{xx}, 2 \mapsto f_{xy}}$,
+    $\phi(l_3) = \set{1 \mapsto f_{xx}, 2 \mapsto f_{yx}}$
+\ee
 
 \exercise{2.7.2.5}
 
