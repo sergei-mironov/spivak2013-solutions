@@ -23,12 +23,13 @@ Note: I've used title case to make it look like a heading. Let me know if you ne
 ```
 -->
 
-Category Theory for Scientists by Spivak (2013) Solutions
----------------------------------------------------------
+Category Theory for Scientists (Solutions)
+------------------------------------------
 
-.. also helping Author to get familiar with tikz and other LaTeX packages.
+The repository contains solutions for problems from the "Category Theory for Scientists" book by
+Spivak.
 
-[[PDF]](./tex/main.pdf)
+* Solutions [[TEX]](./tex/main.tex) [[PDF]](./tex/main.pdf)
 
 
 Links
