@@ -211,9 +211,12 @@ Yes, until we consider other types of phones besides cell- and landline ones.
 
 \exercise{2.4.2.10}
 
-Write the universal property for coproduct in terms of a relationship between..
+Write the universal property for coproduct in terms of a relationship between
+$Hom_{Set}(X,A)$, $Hom_{Set}(Y,A)$ and $Hom_{Set}(X \sqcup Y, A)$.
 
-\ans \unsure $Hom_{Set}(X,A) \sqcup Hom_{Set}(Y,A) \cong Hom_{Set}(X \sqcup Y, A)$
+\ans
+
+$Hom_{Set}(X,A) \times Hom_{Set}(Y,A) \cong Hom_{Set}(X \sqcup Y, A)$
 
 \exercise{2.4.2.13}
 
@@ -749,7 +752,7 @@ one or both are empty), is it always true that $|B^A| = |B|^{|A|}$?
 \ans
 
 The statement is true when both sets are non-empty and if only one set is empty.
-When both sets are empty, it is true if we assume that $0^0 = 0$.
+When both sets are empty, it is true if we put $0^0 = 1$.
 
 \exercise{2.7.2.4}
 
@@ -806,7 +809,24 @@ $ev: Hom_{Set}(A, B) \times A \to B$
 
 \ans
 
-TODO
+\eb According to (2.4),
+$\phi^{-1}$ is
+\[
+\psi : [(A \to B) \to (A \to B)] \to [(A \to B) \times A \to B]
+\]
+defined as
+\[
+\psi = (g:G) \mapsto ((f, a): (A \to B)\times A) \mapsto g(f)(a)
+\]
+where we put $G = [(A \to B) \to (A \to B)]$. Indeed, $G$ has an identity
+element $id_{B^A} = f \mapsto f$.
+Now, \[ev = \psi(id_{B^A}) = (f,a) \mapsto id_{B^A}(f)(a) = (f,a) \mapsto b\]
+where $f: A \to B = a \mapsto b$
+
+\ei $ev$ must be a shortening of "evaluate". It maps $f$ and its input argument
+    to the result.
+
+\ee
 
 \exercise{2.7.2.6}
 
@@ -814,11 +834,30 @@ In Example 2.4.1.7 we said that $\Rational^2$ is an abbreviation for $\Rational
 \times \Rational$, but in (2.43) we say that $\Rational^2$ is an abbreviation
 for $\Rational^{\underline{2}}$. Use Exercise 2.1.2.14, Proposition 2.7.2.3,
 Exercise 2.4.2.10, and the fact that $1+1=2$, to prove that these are
-isomorphic, $\Rational^2 = \Rational \times \Rational$
+isomorphic, $\Rational^{\underline{2}} = \Rational \times \Rational$
 
 \ans
 
-TODO
+Reminder:
+
+2.1.2.14: Find a set A such that for any set X there is a isomorphism of sets $X
+= Hom_{Set}(A,X)$ (Answer - $\set{\Smiley}$).
+
+2.7.2.3: Currying
+
+2.4.2.10: Universal property of coproducts: $Hom_{Set}(X,A) \times
+Hom_{Set}(Y,A) = Hom_{Set}(X \sqcup Y, A)$.
+
+
+So we go:
+
+\[
+\Rat^{\underline 2} \cong \set{1,2} \to \Rat \cong \set{1} \sqcup \set{2} \to
+\Rat \cong (\set{1} \to \Rat) \times (\set{2} \to \Rat) \cong \Rat \times \Rat
+\]
+
+where we write $Hom_{Set}(A,B)$ as just $A \to B$. \unsure The problem is that
+we don't use currying and the $1+1=2$ fact.
 
 \vsp
 \vsp
