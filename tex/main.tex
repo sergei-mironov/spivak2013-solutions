@@ -64,6 +64,7 @@ breaklines=true
 \newcommand{\AST}{\mathbb{AST}}
 \newcommand{\TNET}{\mathbb{TNET}}
 \newcommand{\CV}{\Rational^N}
+\newcommand{\U}[1]{{\underline{#1}}}
 
 \newcommand{\ei}{\item}
 \newcommand{\eb}{\begin{enumerate}[label=(\alph*)]\ei}
@@ -109,7 +110,7 @@ breaklines=true
 \setcounter{secnumdepth}{4}
 % \RedeclareSectionCommand[runin=false,afterskip=0pt,afterindent=false]{paragraph}
 
-\title{Category Theory for Scientists (Solutions)}
+\title{Solutions for Category Theory for Scientists by David Spivak}
 \author{Sergei Mironov}
 
 \begin{document}
@@ -122,8 +123,8 @@ breaklines=true
 
 The book \tcite{Spivak2013CategoryTF}.
 
-\setcounter{section}{2}
-\section*{Chapter 2. The Category of Sets}
+% \setcounter{section}{2}
+\section{The Category of Sets}
 
 \exercise{2.3.3.1}
 
@@ -886,7 +887,7 @@ Reminder:
 
 \vsp
 
-For $Hom_{Set}(A,B)$, by definition, consists sets of the form
+$Hom_{Set}(A,B)$, by definition, consists of sets of the form
 $\set{(a_1,b_1),(a_2,b_2),...}$ where $\set{a_1, a_2, ...} = A$ and $\forall i:
 b_i \in B$.  In contrast to $Hom_{Set}(A,\set{})$, for which we can not define
 any such functions, in $Hom_{Set}(\set{}, \set{})$ we can define a single empty
@@ -904,6 +905,23 @@ $a = 0$ or $b = 0$. Is the analogous statement true of all sets?
 \ans
 
 The proposition is: if $A \times B = \set{}$ then either $A = \set{}$ or $B = \set{}$.
+
+TODO: check the proof of this fact for numbers.
+
+\exercise{2.7.3.4}
+
+Explain why there is a canonical function $\U{5}^\U{3} \times \U{3} \to \U{5}$ but not a
+canonical function $\U{575} \to \U{5}$.
+
+\ans
+
+Following the definitions of Currying (2.7.2.3), we can transform $\U{5}^\U{3}
+\times \U{3} \to \U{5}$ to $Hom_{Set}(\U{3},\U{5}) \to Hom_{Set}(\U{3},\U{5})$.
+There is an canonical function $id_{Hom_{Set}(\U{3},\U{5})}$ mapping every $\U{3}
+\to \U{5}$ function to itself.
+
+In contrast, for $\U{575} \to \U{5}$ which is $Hom_{Set}(\U{575},\U{5})$ we
+can't name any outstanding functions.
 
 \vsp
 \vsp
