@@ -852,12 +852,51 @@ Hom_{Set}(Y,A) = Hom_{Set}(X \sqcup Y, A)$.
 So we go:
 
 \[
-\Rat^{\underline 2} \cong \set{1,2} \to \Rat \cong \set{1} \sqcup \set{2} \to
+\Rat^{\underline 2} = \set{1,2} \to \Rat \cong \set{1} \sqcup \set{2} \to
 \Rat \cong (\set{1} \to \Rat) \times (\set{2} \to \Rat) \cong \Rat \times \Rat
 \]
 
-where we write $Hom_{Set}(A,B)$ as just $A \to B$. \unsure The problem is that
-we don't use currying and the $1+1=2$ fact.
+where we write $Hom_{Set}(A,B)$ as just $A \to B$.
+
+\unsure The problem in the proof is that we didn't use currying and the $1+1=2$
+fact. Should we actually continue by saying that $\Rat \times \Rat =
+\Rat^{1+1}$? But then again, what about currying?
+
+\exercise{2.7.3.2}
+
+Everything in Proposition 2.7.3.1 is true except in one case, namely
+that of
+\[
+  \underline{0}^{\underline{0}}
+\]
+
+In this case, we get conflicting answers, because for any set A, including $A =
+\emptyset = \underline{0}$, we have claimed both that $A^0 = \underline{1}$ and
+that $0^A = \underline{0}$.  What is the correct answer for
+$\underline{0}^{\underline{0}}$, based on the definitions of $\underline{0}$ and
+$\underline{1}$, given in (2.6), and of $A^B$, given in (2.41)?
+
+\ans
+
+Reminder:
+
+2.41: $B^A := Hom_{Set}(A,B)$, which we sometimes write just as $A \to B$.
+
+2.6: The definitions are: $\underline{1} := \set{1}$, $\underline{0} := \emptyset$.
+
+\vsp
+
+In contrast to $\underline{0}^A$, for which we could not define any
+functions, for $Hom_{Set}(\emptyset, \emptyset)$ we have $\set{\set{}}$
+
+\exercise{2.7.3.3}
+
+It is also true of natural numbers that if $a, b \in \N$ and $ab = 0$ then either
+$a = 0$ or $b = 0$. Is the analogous statement true of all sets?
+
+\ans
+
+The proposition is: if $A \times B = \set{}$ then either $A = \set{}$ or $B = \set{}$.
 
 \vsp
 \vsp
