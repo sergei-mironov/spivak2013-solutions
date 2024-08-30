@@ -53,6 +53,7 @@ breaklines=true
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Rational}{\mathbb{R}}
 \newcommand{\Rat}{\mathbb{R}}
+\newcommand{\Pow}{\mathbb{P}}
 
 \newcommand{\vsp}[0]{\vspace*{10pt}\par}
 \newcommand{\tcite}[1]{\textit{(\citefield{#1}{year}, \citeauthor{#1})}\:\textit{``\citefield{#1}{title}''}\:\cite{#1}}
@@ -915,13 +916,30 @@ canonical function $\U{575} \to \U{5}$.
 
 \ans
 
-Following the definitions of Currying (2.7.2.3), we can transform $\U{5}^\U{3}
-\times \U{3} \to \U{5}$ to $Hom_{Set}(\U{3},\U{5}) \to Hom_{Set}(\U{3},\U{5})$.
-There is an canonical function $id_{Hom_{Set}(\U{3},\U{5})}$ mapping every $\U{3}
-\to \U{5}$ function to itself.
+Following the definition of Currying (2.7.2.3), we can transform $\U{5}^\U{3}
+\times \U{3} \to \U{5}$ back to $Hom_{Set}(\U{3},\U{5}) \to
+Hom_{Set}(\U{3},\U{5})$.  There is an canonical function
+$id_{Hom_{Set}(\U{3},\U{5})}$ mapping every $\U{3} \to \U{5}$ function to
+itself.
 
 In contrast, for $\U{575} \to \U{5}$ which is $Hom_{Set}(\U{575},\U{5})$ we
 can't name any outstanding functions.
+
+\exercise{2.7.4.2}
+
+\eb How many elements does $\Pow(\emptyset)$ have?
+\ei How many elements does $\Pow(\set{\Smiley})$ have?
+\ei How many elements does $\Pow(\set{1, 2, 3, 4, 5, 6})$ have?
+\ei Any idea why they may have named it "power set"?
+\ee
+
+\ans
+
+\eb $\Pow(\emptyset) = \set{\emptyset}$ - one element.
+\ei $\Pow(\set{\Smiley}) = \set{\set{}, \set{\Smiley}}$ - two elements.
+\ei $\Pow(\set{1, 2, 3, 4, 5, 6})$ has $64$ elements.
+\ei The name probably originates from the fact that $|\Pow(A)| = 2^{|A|}$.
+\ee
 
 \vsp
 \vsp
