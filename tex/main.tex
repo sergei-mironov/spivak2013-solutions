@@ -1012,7 +1012,27 @@ Show, in analogy to Proposition 2.7.5.5, that pushouts preserve epimorphisms.
 
 \ans
 
-TODO
+Let $f: Y \to X$ be an epimorphism. For any function $g$, the bottom map $f':A
+\to X \sqcup_Y A$ is again an epimorphism.
+
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAE0QBfU9TXfIRQBGclVqMWbABrdeIDNjwEiZYePrNWiEAEE5fJYKKj11TVJ3SABAB1bcAI4BjJmgD67a-p6GBKlAAmUkCNSW0QACFucRgoAHN4IlAAMwAnCABbJDIQHAgkUQktNhSDEHSsnOp8pGDiyxB7FIg0xgZrePLK7MR62sQAZnNw0oBybozeooHhhoj4id8KqaQ5gYAWagYsMAioCCYAIwZWagALGDooJDAmBgYauiwGNkg9kBGSnWzlnsKagVEFsQDsPjoDsdTp8QJdrrd7o88s9Xjp3mcQEcYGAbkNchYIo5JlU+oCkCCsTikABaQb40Y6NAxLhAA
+\begin{tikzcd}
+Y \arrow[r, "f"] \arrow[d, "\forall g"]        & X \arrow[d, "g'"] \arrow[rdd, "r", "q"', Rightarrow, bend left] &   \\
+A \arrow[r, "f'"] \arrow[rrd, "p", bend right] & X \sqcup_Y A \arrow[rd, "n", "m"', Rightarrow]                  &   \\
+                                               &                                                           & B
+\end{tikzcd}
+\end{center}
+
+The proof goes as follows:
+(1) We add some $B$ and two functions $m,n: X \sqcup_Y A \to B$ such that $m
+\circ f' = n \circ f'$. We denote this function by $p$. (2) We look at the
+functions $q = m \circ g'$ and $r = n \circ g'$: $q \circ f = m \circ g' \circ f
+= m \circ f' \circ g = n \circ f' \circ g = n \circ g' \circ f = r \circ f$. So
+we can speak of only one function $q$ and ignore $r$. (3) From the universal
+property of pushouts, there exist exactly one function $X \sqcup_Y A \to B$, so
+we have $m = n$. (4) We conclude that $f'$ is an epimorphism by the definition.
+
 
 \exercise{2.7.5.9}
 
