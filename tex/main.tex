@@ -1128,7 +1128,29 @@ that the multiset is allowed to contain unused names in it.
 
 \exercise{2.7.6.5}
 
-TODO
+Consider the multisets described in Exercise 2.7.6.2.
+
+\eb Write each of them in the form $(E, B, \pi)$, as in Definition 2.7.6.3.
+\ei In terms of the same definition, what are the mappings $X \to Y$ ?
+\ei If we remove the restriction that diagram 2.45 must commute, how many
+    mappings $X \to Y$ are there?
+\ee
+
+\ans
+
+\eb $X = (E =
+    \set{1_1,1_2,2,3}, B = \set{1, 2, 3}, \pi = \set{1_1 \mapsto 1, 1_2
+    \mapsto 1, 2 \mapsto 2, 3 \mapsto 3})$.
+
+    $Y = (E = \set{a, b_1, b_2, b_3}, B = \set{a,b}, \pi = \set{a \mapsto a, b_1
+    \mapsto b, b_2 \mapsto b, b_3 \mapsto b})$.
+\ei The set of mappings is $\set{(f_1, f_2) | f_2(\pi_X(x)) =
+    \pi_Y(f_1(x))}$. It is the set containing all $f_1: E_X \to E_Y$ except
+    those which leads to different instances of $B_X$ to have different names in
+    $B_Y$. So, for example, $\set{1_1 \mapsto a, 1_2 \mapsto b_1}$ is forbidden.
+\ei Without the commutativity restriction, we must have $|E_X \to E_Y| * |B_X
+    \to B_Y| = 4^4 * 3^2 = 2304$ different mappings.
+\ee
 
 \exercise{2.7.6.8}
 
