@@ -1065,11 +1065,66 @@ X \arrow[r, "f"]                 & \Omega
 
 \exercise{2.7.6.2}
 
-TODO
+\eb Come up with some notion of mapping for multisets that generalizes functions
+    when the notion is restricted to sets.
+\ei Suppose that $X = (1, 1, 2, 3)$ and $Y = (a, b, b, b)$, i.e. $X = \{1, 2,
+    3\}$ with $1$ having multiplicity $2$, and $Y = \{a, b\}$ with $b$ having
+    multiplicity $3$. What are all the maps $X \to Y$ in your notion?
+\ee
+
+\ans
+
+\eb The right definition is given in the textbook below this exercise. Here we
+    try a brute-force approach. Let Multiset be a set of pairs $\{(e_i,n_i)\}$
+    where $\set{e_i} = E$ is the set of elements and $n_i \in \N : n_i \ge 1$
+    the multiplicity of each element.
+
+    With this definition, $X = \set{(1,2),(2,1),(3,1)}$ and $Y = \set{(a,1),
+    (b,3)}$.
+\ei We are going to have some troubles with the definition of what the map is in
+    our multiset. We want to preserve the totality, so we define map $A \to B$
+    as a set of pairs $\set{((a_i, n_i), B_i)}$ where $B_i \subseteq B$ such that
+    (1) every $(a_i,n_i)$ is unique among the map, (2) $\set{(a_i,n_i)} = A$,
+    (3) sum of multiplicities of $B_i$ is equal to the $n_i$.
+
+    Some examples of $X \to Y$ are:
+    \eb $\set{((1,2),\set{(a,1),(b,1)}),((2,1),\set{(a,1)}),((3,1),\set{(a,1)})}$
+    \ei $\set{((1,2),\set{(b,2)}),((2,1),\set{(a,1)}),((3,1),\set{(a,1)})}$
+    \ei $\set{((1,2),\set{(b,2)}),((2,1),\set{(b,1)}),((3,1),\set{(b,1)})}$
+    \ei ...
+    \ee
+
+    TODO: should we really list all the maps?
+\ee
 
 \exercise{2.7.6.4}
 
-TODO
+Suppose that a pseudo-multiset is defined to be almost the same as a multiset,
+except that $\pi$ is not required to be surjective.
+
+\eb Write down a pseudo-multiset that is not a multi-set.
+\ei Describe the difference between the two notions in terms of multiplicities.
+\ei The multiset commutative diagram might no longer commute for the
+    pseudo-multisets.
+\ee
+
+\ans
+
+Recap: We say that $f: X \to Y$ is surjective if, for all $y \in Y$ there exists
+some $x \in X$ such that $f(x) = y$. In other words, uncovered elements in $Y$
+are not allowed, but $X$ can be larger than $Y$.  Being "non-surjective" means
+that the multiset is allowed to contain unused names in it.
+
+\eb Example of a pseudo-multiset which is not a multiset: $(E =
+    \set{1_1,1_2,2,3}, B = \set{1, 2, 3, \Smiley}, \pi = \set{1_1 \mapsto 1, 1_2
+    \mapsto 1, 2 \mapsto 2, 3 \mapsto 3})$. $\pi$ doesn't map anything to
+    \Smiley thus it is not surjective.
+\ei Pseudo-multisets are allowed to contain elements with undefined
+    multiplicities.
+\ei Pseudo-multisets are less useful because it is hard to choose what is
+    better: to include an element with an undefined multiplicity or to not
+    include it at all.
+\ee
 
 \exercise{2.7.6.5}
 
