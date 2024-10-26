@@ -1163,7 +1163,18 @@ diagrams.
 
 \ans
 
-TODO
+\begin{center}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGclVqMWbAJrdeIDNjwEiAJlLDx9Zq0QgAWnL5LBRMqq2TdIAELdxMKAHN4RUADMAThAC2SMiA4EEiiEjps7kYgXr4h1EFI6mFSek5RMX6IAQmISdopIAAW6d6Z2cGIAMzUDHQARjAMAAr8ykIgDDDuOCDU+dZoJbG58RXVydaeQ5mhOeP9bACO9lxAA
+\begin{tikzcd}
+X \arrow[r, "f"] \arrow[rrd, "h"] \arrow[dd, "p"] & Y \arrow[rd, "g"] \arrow[ldd, "q"] &                    \\
+                                                  &                                    & Z \arrow[lld, "r"] \\
+B                                                 &                                    &
+\end{tikzcd}
+\end{center}
+
+We can define $h : X \to Z = g \circ f$ and the since all the $p,q,r$ triangles do commute by the
+definition of mappings of relative sets. So if we have $f_{rel} : (X,p) \to (Y,q)$ and $g_{rel} :
+(Y,q) \to (Z,r)$ then $g_{rel} \circ f_{rel}$ is just $g \circ f$.
 
 \exercise{2.7.6.9}
 
@@ -1174,7 +1185,20 @@ TODO
 
 \ans
 
-TODO
+\eb We need to explore the $Hom_{RelSet}((A,a),(B,b))$ where both $A$ and $B$ are relative to
+    $E=\set{\Smiley}$ and $a,b$ are unique mappings from $A,B$ to $E$.
+    \begin{itemize}
+    \item $A$ and $B$ are non-empty: trivial. The behaviour is similar to
+          $Hom_{Set}(A,B)$.
+    \item $A$ is empty: The only possible $a:A \to E$ is $\set{}$. The problem might come from the
+          fact that $a$ must be a part of commutative triangle with $b$. TODO: check if we can say
+          that empty function commutes with anything or not.
+    \item $B$ is empty: The only possible $f:A \to B$ is $\set{}$ when $A$ is also empty. Again,
+          need to check the triangle commute statement for empty functions.
+    \end{itemize}
+\ei In order for $(S,\pi)$ to be relative to $\set{}$, the $\pi:S \to \set{}$ must exist which is
+    possible only if $S$ is also empty. Thus, we have only one set relative to the empty set.
+\ee
 
 \exercise{2.7.6.13}
 
