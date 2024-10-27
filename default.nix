@@ -6,7 +6,7 @@
 let
   local = rec {
 
-    inherit (pkgs) python3 zathura evince inotify-tools;
+    inherit (pkgs) python3 zathura evince inotify-tools tabbed;
     inherit (litrepl) litrepl-release;
     inherit (aicli) python-aicli;
 
@@ -64,6 +64,7 @@ let
         evince
         python-dev
         inotify-tools
+        tabbed
       ];
 
       shellHook = with pkgs; ''
