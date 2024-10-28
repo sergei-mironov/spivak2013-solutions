@@ -1,0 +1,56 @@
+diff --git a/tabbed.c b/tabbed.c
+index 81be5e4..df101bf 100644
+--- a/tabbed.c
++++ b/tabbed.c
+@@ -50,7 +50,7 @@
+ 
+ enum { ColFG, ColBG, ColLast };       /* color */
+ enum { WMProtocols, WMDelete, WMName, WMState, WMFullscreen,
+-       XEmbed, WMSelectTab, WMLast }; /* default atoms */
++       XEmbed, WMSelectTab, WMNoHints, WMLast }; /* default atoms */
+ 
+ typedef union {
+ 	int i;
+@@ -87,6 +87,14 @@ typedef struct {
+ 	Bool closed;
+ } Client;
+ 
++typedef struct {
++  unsigned long flags;
++  unsigned long functions;
++  unsigned long decorations;
++  long input_mode;
++  unsigned long status;
++} MotifWmHints;
++
+ /* function declarations */
+ static void buttonpress(const XEvent *e);
+ static void cleanup(void);
+@@ -977,6 +985,7 @@ setup(void)
+ 	XClassHint class_hint;
+ 	XSizeHints *size_hint;
+ 	struct sigaction sa;
++  MotifWmHints hints;
+ 
+ 	/* do not transform children into zombies when they terminate */
+ 	sigemptyset(&sa.sa_mask);
+@@ -1002,6 +1011,7 @@ setup(void)
+ 	wmatom[WMSelectTab] = XInternAtom(dpy, "_TABBED_SELECT_TAB", False);
+ 	wmatom[WMState] = XInternAtom(dpy, "_NET_WM_STATE", False);
+ 	wmatom[XEmbed] = XInternAtom(dpy, "_XEMBED", False);
++  wmatom[WMNoHints] = XInternAtom(dpy, "_MOTIF_WM_HINTS", False);
+ 
+ 	/* init appearance */
+ 	wx = 0;
+@@ -1083,6 +1093,11 @@ setup(void)
+ 
+ 	nextfocus = foreground;
+ 	focus(-1);
++
++  hints.flags = 2; // Only the decorations field is defined
++  hints.decorations = 0; // Enable no decorations
++  XChangeProperty(dpy, win, wmatom[WMNoHints], wmatom[WMNoHints],
++    sizeof(unsigned long), PropModeReplace, (unsigned char*)&hints, 5);
+ }
+ 
+ void
