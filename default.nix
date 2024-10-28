@@ -19,10 +19,10 @@ let
     runtabbed = pkgs.writeShellScriptBin "runtabbed.sh" ''
       unset TMUX
       ${tabbed_}/bin/tabbed -d >/tmp/tabbed.xid
-      zathura  -e $(</tmp/tabbed.xid)  tex/main.pdf &
+      WID=$(</tmp/tabbed.xid)
+      zathura  -e $WID  tex/main.pdf &
       sleep 0.3
-      st -w $(</tmp/tabbed.xid) &
-      sleep 0.3
+      st -w $WID -e env WINDOWID=$WID bash &
     '';
 
     python = python3;
