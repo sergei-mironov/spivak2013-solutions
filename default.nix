@@ -10,6 +10,21 @@ let
     inherit (litrepl) litrepl-release;
     inherit (aicli) python-aicli;
 
+
+    tabbed_ = tabbed.override {
+      customConfig = builtins.readFile ./c/tabbed.config.h;
+      patches = [ ./c/tabbed.patch ];
+    };
+
+    runtabbed = pkgs.writeShellScriptBin "runtabbed.sh" ''
+      unset TMUX
+      ${tabbed_}/bin/tabbed -d >/tmp/tabbed.xid
+      zathura  -e $(</tmp/tabbed.xid)  tex/main.pdf &
+      sleep 0.3
+      st -w $(</tmp/tabbed.xid) &
+      sleep 0.3
+    '';
+
     python = python3;
 
     python-dev = python.withPackages (
@@ -64,10 +79,8 @@ let
         evince
         python-dev
         inotify-tools
-        (tabbed.override {
-          customConfig = builtins.readFile ./c/tabbed.config.h;
-          patches = [ ./c/tabbed.patch ];
-        })
+        tabbed_
+        runtabbed
       ];
 
       shellHook = with pkgs; ''
@@ -80,7 +93,7 @@ let
     shell = shell-nixos;
 
     collection = rec {
-      inherit shell ;
+      inherit shell runtabbed;
     };
   };
 
