@@ -64,7 +64,10 @@ let
         evince
         python-dev
         inotify-tools
-        tabbed
+        (tabbed.override {
+          customConfig = builtins.readFile ./c/tabbed.config.h;
+          patches = [ ./c/tabbed.patch ];
+        })
       ];
 
       shellHook = with pkgs; ''
