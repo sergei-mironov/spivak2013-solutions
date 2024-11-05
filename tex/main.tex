@@ -1216,7 +1216,64 @@ There is a strong relationship between $A$-indexed sets and relative sets over $
 
 \ans
 
-TODO
+For any  $I$-relative set $A_I$, where $I$ is also an index set of some $(S_a)_{a\in I}$, $A_I$
+could be used as an alternative index set. TODO: not sure.
+
+\section{Categories and functors, without admitting it}
+
+\subsection{Monoids}
+
+\exercise{3.1.1.6}
+
+Let $M = \N$ be the set of natural numbers. Taking $e = 1$, come up with a formula for $*$ that
+gives $\N$ the structure of a monoid.
+
+\ans
+
+We set $*$ is multiplication. Then we have both identitites $a*e = a$, $e*a = a$ and the
+associativity.
+
+
+\exercise{3.1.1.7}
+
+Come up with an operation on the set $M = \set{1, 2, 3, 4}$, i.e. a legitimate function $f : M
+\times M \to M$, such that $f$ cannot be the multiplication formula for a monoid on $M$. That is,
+either it is not associative, or no element of $M$ can serve as a unit.
+
+\ans
+
+\eb Has unit, but is not associative: $f = (a,b) \mapsto max(div(a,b), 1)$ modulo $4$, where $div$
+    denotes integer division.
+\ei Associative, but has no unit: any function returning a constant element, say $1$.
+\ee
+
+\exercise{3.1.1.8}
+
+In both Example 3.1.1.3 and Exercise 3.1.1.6, the monoids $(M, e, *)$ satisfied an additional rule
+called commutativity, namely $m*n = n*m$ for every $m$, $n \in M$.  There is a monoid $(M, e, *)$
+lurking in linear algebra textbooks that is not commutative; if you have background in linear
+algebra try to answer this: what $M$, $e$, and $*$ might I be referring to?
+
+\ans
+
+$M = \set{1,a,b}$ \href{https://math.stackexchange.com/a/207813/374432}{link}.
+
+\exercise{3.1.1.9}
+
+Recall the notion of commutativity for monoids from Exercise 3.1.1.8.
+
+\eb What is the smallest set $M$ that you can give the structure of a non-commutative monoid?
+\ei What is the smallest set $M$ that you can give the structure of a monoid?
+\ee
+
+\ans
+
+\eb Three-element set. It will not work for two-element set $\set{a,b}$ because the
+    non-associativity condition $a*b \ne b*a$ is not compatible with the monoid identity laws.
+\ei One-element set is the smallest set which can have a monoid structure, its only element must be
+    the monoid's identity.
+\ee
+
 
 \vsp
 \vsp
