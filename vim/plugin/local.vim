@@ -14,6 +14,6 @@ let g:terminal_images2_background = 0
 autocmd CursorHold,BufWinEnter * call terminal_images2#UpdateVisible()
 nnoremap gi <Esc>:call terminal_images2#ShowUnderCursor()<CR>
 
-let g:litrepl_ai_interpreter = "aicli --model=openai:gpt-4o --model-apikey='file:~/.openai_apikey.txt'"
+let g:litrepl_ai_auxdir = $PROJECT_SOURCE . "/_litrepl"
 
 set formatprg=formattest.sh

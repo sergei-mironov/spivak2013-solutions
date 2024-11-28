@@ -16,13 +16,19 @@ let
       patches = [ ./c/tabbed.patch ];
     };
 
-    runtabbed = pkgs.writeShellScriptBin "runtabbed.sh" ''
+    xterminal = pkgs.writeShellScriptBin "xterminal.sh" ''
       unset TMUX
+      set -x
       ${tabbed_}/bin/tabbed -d >/tmp/tabbed.xid
       WID=$(</tmp/tabbed.xid)
       zathura  -e $WID  tex/main.pdf &
       sleep 0.3
-      st -w $WID -e env WINDOWID=$WID bash &
+      CMD=$@
+      if test -z "$CMD" ; then
+        CMD=$SHELL
+      fi
+      st -w $WID -e env WINDOWID=$WID $CMD
+      xkill -id $WID
     '';
 
     python = python3;
@@ -80,7 +86,7 @@ let
         python-dev
         inotify-tools
         tabbed_
-        runtabbed
+        xterminal
       ];
 
       shellHook = with pkgs; ''
@@ -93,7 +99,7 @@ let
     shell = shell-nixos;
 
     collection = rec {
-      inherit shell runtabbed;
+      inherit tabbed_ shell xterminal;
     };
   };
 
