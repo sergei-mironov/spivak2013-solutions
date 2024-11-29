@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1726392261,
-        "narHash": "sha256-qz3l7Nza4s2N0ISwK6sLEKngM/63w6yruerZyoyLgQo=",
+        "lastModified": 1732731837,
+        "narHash": "sha256-S9pnzgTkNNuuqM/5ym7KObUg1rEdK869inVAYn4ffSE=",
         "owner": "sergei-mironov",
         "repo": "aicli",
-        "rev": "5fcd782c1187b33b69578e65dacfd63fc839c4a4",
+        "rev": "3d788667a39ac74f97aee01634d7b021ad4f86e0",
         "type": "github"
       },
       "original": {
@@ -30,11 +30,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1724831733,
-        "narHash": "sha256-q6nRyFdSdd2RhTXopqIZRMeuGTGWr+faltRVubKmqQI=",
+        "lastModified": 1732833630,
+        "narHash": "sha256-yhibVy+SWHMauykWv65JE9DsC7FJCnyuyf3BC4Pizx8=",
         "owner": "sergei-mironov",
         "repo": "litrepl",
-        "rev": "1e37640b3abdf4f4bc83e27457083fb5756a8848",
+        "rev": "2676e2b59036b9954e13f80e4af2ae302498983a",
         "type": "github"
       },
       "original": {
