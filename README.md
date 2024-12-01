@@ -1,8 +1,8 @@
 Category Theory for Scientists (Solutions)
 ------------------------------------------
 
-The repository contains solutions for problems from the "Category Theory for Scientists" book by
-Spivak.
+This repository includes the source files and the PDF document featuring solutions to problems from
+Spivak's book "Category Theory for Scientists".
 
 * Solutions [[TEX]](./tex/main.tex) [[PDF]](./tex/main.pdf)
 
