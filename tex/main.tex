@@ -1463,25 +1463,90 @@ Consider the functions $\phi$ and $\psi$ defined above.
 
 \exercise{3.1.3.3}
 
-Let $\N$ be the additive monoid of natural numbers, let $S = {0, 1, 2, ...,
-11}$, and let $\cdot: \N \times S \to S$ be the action given in Example
-3.1.2.3. Using a nice small generating set for the monoid, write out the
-corresponding action table.
+Let $\N$ be the additive monoid of natural numbers, let $S = \set{0, 1, 2, ...,
+11}$, and let $\cdot: \N \times S \to S$ be the action given in Example 3.1.2.3.
+Using a nice small generating set for the monoid, write out the corresponding
+action table.
 
 \ans
 
-TODO
+\begin{python}
+def _act(a,b):
+  return (a + b) % 12
+
+for n in {0, 2, 3, 5, 7, 11}:
+  print(f"{n}", end='')
+  for s in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}:
+    print(f"& {_act(s,n)}", end='')
+  print("\\\\")
+  print("\\hline")
+\end{python}
+
+\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{13}{|c|}{} \\
+\hline
+$\N$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\
+\hline\hline
+%lresult
+0& 0& 1& 2& 3& 4& 5& 6& 7& 8& 9& 10& 11\\
+\hline
+2& 2& 3& 4& 5& 6& 7& 8& 9& 10& 11& 0& 1\\
+\hline
+3& 3& 4& 5& 6& 7& 8& 9& 10& 11& 0& 1& 2\\
+\hline
+5& 5& 6& 7& 8& 9& 10& 11& 0& 1& 2& 3& 4\\
+\hline
+7& 7& 8& 9& 10& 11& 0& 1& 2& 3& 4& 5& 6\\
+\hline
+11& 11& 0& 1& 2& 3& 4& 5& 6& 7& 8& 9& 10\\
+\hline
+%lnoresult
+\end{tabular}
+
+TODO: Not sure I get the problem correctly, need to check.
+
 
 \exercise{3.1.4.6}
 
-For any $m \in \N$ let $i_m : \N \to \Z$ be the function $i_m(n) = m*n$. All
-such functions are monoid homomorphisms $(\N,0,+) \to (\Z,0,+)$. Do any monoid homo-
-morphisms $(\N, 0, +) \to (\Z, 0, +)$ not come in this way? For example, what about using
-$n \mapsto 5*n + 1$ or $n \mapsto n^2$ , or some other function?
+For any $m \in \N$ let $i_m : \N \to \Z$ be the function $i_m(x) = m*x$. All
+such functions are monoid homomorphisms $(\N,0,+) \to (\Z,0,+)$. Do any monoid
+homomorphisms $(\N, 0, +) \to (\Z, 0, +)$ not come in this way? For example,
+what about using $n \mapsto 5*n + 1$ or $n \mapsto n^2$ , or some other
+function?
 
 \ans
 
-TODO
+Lets assume that $\exists f : (\forall m :f \ne i_m)$. Then there should be at
+least one point $d \ne 0$ such that $f(d) \ne i_m(d)$. Lets break down $f(d) =
+f(1 + 1 + ... + 1) = f(1)*d \ne m*d$. So we have $\forall m : f(1) \ne m$
+which is a contradiction.
+
+\exercise{3.1.4.7}
+
+Let $\mathcal{M} := (\N, 0, +)$ be the additive monoid of natural numbers, let
+$\mathcal{N} = (\Rat_{\ge 0} , 0, +)$ be the additive monoid of nonnegative real
+numbers, and let $\mathcal{P} := (\Rat_{>0} , 1, *)$ be the multiplicitive
+monoid of positive real numbers. Can you think of any nontrivial monoid
+homomorphisms of the following sorts:
+
+$\mathcal{M} \to \mathcal{N}$ ;
+$\mathcal{M} \to \mathcal{P}$ ;
+$\mathcal{N} \to \mathcal{P}$ ;
+$\mathcal{N} \to \mathcal{M}$ ;
+$\mathcal{P} \to \mathcal{N}$ ?
+
+\ans
+
+\es $\mathcal{M} \to \mathcal{N}$: $f = x_{\mathcal{M}} \mapsto x_{\mathcal{N}}$;
+\ei $\mathcal{M} \to \mathcal{P}$: $f = x_{\mathcal{M}} \mapsto e^x$;
+\ei $\mathcal{N} \to \mathcal{P}$: $f = x_{\mathcal{N}} \mapsto e^x$;
+\ei $\mathcal{N} \to \mathcal{M}$: There are no such homomorphisms. The reason
+    is $|\mathcal{N}| > |\mathcal{M}|$ so $f$ can not be injective which is
+    required in order for $+_{\mathcal{M}}$ to work;
+\ei $\mathcal{P} \to \mathcal{N}$: $f = x \mapsto log(x)$.
+\ee
+
 
 \vsp
 \vsp
