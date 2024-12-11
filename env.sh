@@ -15,3 +15,6 @@ update_pathvar() {
 update_pathvar "PATH" "$CWD/sh"
 update_pathvar "PATH" "$CWD/modules/vim-terminal-images/tupimage"
 
+export LITREPL_WORKDIR="$PROJECT_SOURCE"
+export LITREPL_AI_AUXDIR="$PROJECT_SOURCE/_litrepl/ai"
+export LITREPL_PYTHON_AUXDIR="$PROJECT_SOURCE/_litrepl/python"
