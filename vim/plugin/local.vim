@@ -10,8 +10,28 @@ fun! Indent(ident_spaces)
   let &l:softtabstop=a:ident_spaces
 endfun
 
-let g:terminal_images2_background = 0
-autocmd CursorHold,BufWinEnter * call terminal_images2#UpdateVisible()
-nnoremap gi <Esc>:call terminal_images2#ShowUnderCursor()<CR>
+" let g:sm_terminal_images_background = 0
+" autocmd CursorHold,BufWinEnter * call sm_terminal_images#UpdateVisible()
+" nnoremap gi <Esc>:call sm_terminal_images#ShowUnderCursor()<CR>
 
+set updatetime=5000
 set formatprg=formattest.sh
+
+fun! LitReplPasteFix(scope) range " -> [int, string]
+  let [scope] = [a:scope]
+  if scope != 1
+    throw "Select some text"
+  endif
+  let b:litrepl_ai_interpreter = "aicli-paster.py"
+  let b:litrepl_ai_auxdir = $PROJECT_SOURCE."/_litrepl/ai_paster"
+  try
+    let result = LitReplTaskNew(scope, "/S")
+  finally
+    unlet b:litrepl_ai_auxdir
+    unlet b:litrepl_ai_interpreter
+  endtry
+  return result
+endfun
+if !exists(":LAIPasteFix")
+  command! -range -bar -nargs=0 LAIPasteFix call LitReplPasteFix(<range>!=0)
+endif
