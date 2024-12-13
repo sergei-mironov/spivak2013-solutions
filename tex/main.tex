@@ -1361,11 +1361,13 @@ $\N \cup \set{\infty}$". That idea is on the right track, but is not correct.
 
 \ans
 
-TODO
+Since the cyclic monoids are built on just one generator, it does not matter how
+many relationships we define for it. Only the relationship with the smallest
+maximum argument is important, e.g. $[Q,Q],[Q,Q,Q]$ is more important then
+$[Q],[Q,Q,Q,Q]$.
 
-One idea is to utilize the equivalence relations used to define the monoid. Can
-we sort them and then use as a source for name building?
-
+So, any cyclic monoid can be classified by two numbers: the length of
+"tail" and the length of "loop".
 
 \exercise{3.1.2.4}
 
@@ -1578,6 +1580,10 @@ TODO
 Let \( S \) be a finite set. A permutation of \( S \) is an isomorphism \( f : S
 \to S \).
 
+\begin{center}
+\includegraphics[width=0.4\textwidth]{img/ex3217.png}
+\end{center}
+
 \es Come up with an identity, and a multiplication formula, such that the set of
     permutations of \( S \) forms a monoid.
 \ei Is it a group?
@@ -1585,7 +1591,11 @@ Let \( S \) be a finite set. A permutation of \( S \) is an isomorphism \( f : S
 
 \ans
 
-TODO
+\es The identity is the identity function $f = id_S$. The multiplication is the
+    function composition operator $\circ$.
+\ei Yes, it is a group, because for every permutation we can define a reverse
+    permutation, so $f^{-1} \circ f = id_S$.
+\ee
 
 \exercise{3.2.1.8}
 
@@ -1593,8 +1603,9 @@ In Exercise 3.1.1.27 you classified the cyclic monoids. Which of them are groups
 
 \ans
 
-TODO
-
+Cyclic monoids are characterized by two parameters: the length of their "tail"
+and the length of their "cycle." A monoid is a group if its "tail" length is
+zero.
 
 \exercise{3.2.1.11}
 
