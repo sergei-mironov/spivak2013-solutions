@@ -7,39 +7,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1732731837,
-        "narHash": "sha256-S9pnzgTkNNuuqM/5ym7KObUg1rEdK869inVAYn4ffSE=",
+        "lastModified": 1734083328,
+        "narHash": "sha256-w2KX1oTcFAE2rQ5KK2hpVW2otV5qG5CgVF8FyhjSZwI=",
         "owner": "sergei-mironov",
         "repo": "aicli",
-        "rev": "3d788667a39ac74f97aee01634d7b021ad4f86e0",
+        "rev": "1c1ab525fb6c9339bf1ff35571e66bcc56a2f072",
         "type": "github"
       },
       "original": {
         "owner": "sergei-mironov",
         "repo": "aicli",
-        "type": "github"
-      }
-    },
-    "litrepl": {
-      "inputs": {
-        "aicli": [
-          "aicli"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1732833630,
-        "narHash": "sha256-yhibVy+SWHMauykWv65JE9DsC7FJCnyuyf3BC4Pizx8=",
-        "owner": "sergei-mironov",
-        "repo": "litrepl",
-        "rev": "2676e2b59036b9954e13f80e4af2ae302498983a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "sergei-mironov",
-        "repo": "litrepl",
         "type": "github"
       }
     },
@@ -62,7 +39,6 @@
     "root": {
       "inputs": {
         "aicli": "aicli",
-        "litrepl": "litrepl",
         "nixpkgs": "nixpkgs"
       }
     }

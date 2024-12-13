@@ -17,20 +17,20 @@
       };
     };
 
-    litrepl = {
-      url = "github:sergei-mironov/litrepl";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        aicli.follows = "aicli";
-      };
-    };
+    # litrepl = {
+    #   url = "github:sergei-mironov/litrepl";
+    #   inputs = {
+    #     nixpkgs.follows = "nixpkgs";
+    #     aicli.follows = "aicli";
+    #   };
+    # };
   };
 
-  outputs = { self, nixpkgs, litrepl, aicli }:
+  outputs = { self, nixpkgs, aicli }:
     let
       defaults = (import ./default.nix) {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
-        litrepl = litrepl.outputs.packages.x86_64-linux;
+        # litrepl = litrepl.outputs.packages.x86_64-linux;
         aicli = aicli.outputs.packages.x86_64-linux;
         revision = if self ? rev then self.rev else null;
       };
