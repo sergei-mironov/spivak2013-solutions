@@ -35,3 +35,14 @@ endfun
 if !exists(":LAIPasteFix")
   command! -range -bar -nargs=0 LAIPasteFix call LitReplPasteFix(<range>!=0)
 endif
+
+
+augroup MDFileTypeCheck
+  autocmd!
+  autocmd BufRead,BufNewFile * if expand('%:t') =~ 'AI' && expand('%:e') == 'md' |
+        \ let b:litrepl_ai_auxdir = $PROJECT_SOURCE . "/_litrepl/ai_".expand('%:t:r') |
+        \ endif
+augroup END
+nnoremap <F5> :LEval<CR>
+
+
