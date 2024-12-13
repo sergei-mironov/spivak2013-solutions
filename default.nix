@@ -1,5 +1,5 @@
 { pkgs
-, litrepl
+# , litrepl
 , aicli
 , revision ? null
 } :
@@ -7,7 +7,7 @@ let
   local = rec {
 
     inherit (pkgs) python3 zathura evince inotify-tools tabbed;
-    inherit (litrepl) litrepl-release;
+    # inherit (litrepl) litrepl-release;
     inherit (aicli) python-aicli;
 
 
@@ -56,6 +56,7 @@ let
         psutil
         pygments
         lark
+        (aicli.aicli pp)
       ]
     );
 
@@ -77,7 +78,7 @@ let
     shell-nixos = pkgs.mkShell {
       name = "shell-nixos";
       buildInputs = [
-        litrepl-release
+        # litrepl-release
         python-aicli
         pkgs.gitFull
         texlive-dev

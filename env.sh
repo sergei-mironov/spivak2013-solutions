@@ -1,6 +1,6 @@
 CWD=`pwd`
 export PROJECT_SOURCE="$CWD"
-export VIM_PLUGINS="/home/grwlf/proj/litrepl.vim/vim,/home/grwlf/proj/vim-terminal-images2/vim,$CWD/modules/vim-terminal-images,$CWD/vim"
+export VIM_PLUGINS="/home/grwlf/proj/vim-sm-terminal-images/vim,$CWD/modules/vim-terminal-images,$CWD/vim"
 export TUPIMAGE_UPLOADING_METHOD=file
 
 update_pathvar() {
@@ -15,6 +15,6 @@ update_pathvar() {
 update_pathvar "PATH" "$CWD/sh"
 update_pathvar "PATH" "$CWD/modules/vim-terminal-images/tupimage"
 
-export LITREPL_WORKDIR="$PROJECT_SOURCE"
-export LITREPL_AI_AUXDIR="$PROJECT_SOURCE/_litrepl/ai"
-export LITREPL_PYTHON_AUXDIR="$PROJECT_SOURCE/_litrepl/python"
+# export LITREPL_WORKDIR="$PROJECT_SOURCE"
+# export LITREPL_AI_AUXDIR="$PROJECT_SOURCE/_litrepl/ai"
+# export LITREPL_PYTHON_AUXDIR="$PROJECT_SOURCE/_litrepl/python"
