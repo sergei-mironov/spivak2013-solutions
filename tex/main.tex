@@ -36,6 +36,7 @@ basicstyle=\small\ttfamily,
 columns=flexible,
 breaklines=true
 }
+\usepackage{tikz}
 
 \setlength{\parindent}{0pt}
 
@@ -1571,7 +1572,34 @@ $S$. Write down its action table
 
 \ans
 
-TODO
+The referenced Example contains the following picture:
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{img/finite-state-machine.png}
+\end{center}
+
+By monoid map we probably mean a monoid homomorphism which preserves the monoid
+properties, like $f(a * b) \mapsto f(a) *' f(b)$ where $*$ is a monoid
+operation. So e.g.  $2 \mapsto [a, b, b, a, b, b]$.
+
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+\multicolumn{2}{|c|}{Actions} \\
+\hline
+$\N$ & 1 \\
+\hline
+State 0& State 1\\
+\hline
+State 1& State 2\\
+\hline
+State 2& State 0\\
+\hline
+\end{tabular}
+\end{center}
+
+For other number $n \in \N$ just apply the above tables recursively for $1 +
+(n-1)$ until we reach $0 \mapsto []$.
 
 \subsection{Groups}
 
@@ -1621,7 +1649,7 @@ Group.
 
 \exercise{3.2.1.14}
 
-\es Consider the \( U(1) \) action on \( \R^3 \) given in Example 3.2.1.10.
+\es Consider the \( U(1) \) action on \( \Rat^3 \) given in Example 3.2.1.10.
     Describe the set of orbits of this action.
 \ei What are the orbits of the action of the permutation group
     \(\Sigma_{\{1,2,3\}}\) on the set \(\{1, 2, 3\}\)? (See Exercise 3.2.1.11.)
@@ -1650,6 +1678,24 @@ Yes, it is. It is a reflexive, symmetrical and transitive relation.
 \exercise{3.3.1.4}
 
 TODO (Drawing)
+
+
+
+\begin{tikzpicture}
+  % Define styles
+  \tikzstyle{node} = [circle, draw, fill=black, inner sep=1.2pt]
+  \tikzstyle{edge} = [->, semithick, shorten >=2pt, shorten <=2pt, >=stealth]
+
+  % Nodes
+  \node[node, label=above:{\small\itshape a}] (a) at (0,0) {};
+  \node[node, label=above:{\small\itshape b}] (b) at (2,0) {};
+  \node[node, label=above:{\small\itshape c}] (c) at (1,2) {};
+
+  % Edges with defined style
+  \draw[edge] (a) -- node[below] {\small\itshape 0} (b);
+  \draw[edge] (b) -- node[right] {\small\itshape 1} (c);
+  \draw[edge] (c) -- node[left] {\small\itshape 2} (a);
+\end{tikzpicture}
 
 \exercise{3.3.1.5}
 
@@ -1730,14 +1776,7 @@ TODO
 
 How many paths are there in the following graph?
 
-TODO: fix this:
-1
-‚
-f
-‚2
-g
-‚3
-♦
+TODO: fix this
 
 \ans
 
