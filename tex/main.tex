@@ -1751,15 +1751,15 @@ Consider the two functions \(\text{src}, \text{tgt} : A \to A \sqcup B\), where
 
 \es Let $V$ be a set. Suppose we just draw the elements of $V$ as vertices and
     have no arrows between them. Is this a graph?
-\ei Given $V$ , is there any other “canonical” or somehow automatic non-random
+\ei Given $V$, is there any other “canonical” or somehow automatic non-random
     procedure for generating a graph with those vertices?
 \ee
 
 \ans
 
-\es Yes, it is. Both its $src$ and $dst$ functions are empty.
-\ei No, there isn't. If such a procedure existed, it would imply that every set has
-    predetermined relationships.
+\es Yes, it is. Both its $src$ and $dst$ functions are empty sets.
+\ei No, there isn't. If such a procedure existed, it would mean that a random
+    set has predetermined relationships, but we know it does not.
 \ee
 
 \exercise{3.3.1.10}
@@ -1773,6 +1773,32 @@ Let G be the graph depicted below:
 Draw (using ellipses "$\ldots$" if necessary) the graph $T(G)$ defined in Example
 3.3.1.9.
 
+\ans
+
+The answer is something like the following:
+
+\begin{center}
+\begin{tikzpicture}
+  \tikzstyle{node} = [circle, draw, fill=black, inner sep=1.2pt]
+  \tikzstyle{edge} = [->, semithick, shorten >=2pt, shorten <=2pt, >=stealth]
+
+  \node[node, label=above:{\small\itshape a0}] (a0) at (0,-1) {};
+  \node[node, label=above:{\small\itshape b0}] (b0) at (0,-2) {};
+  \node[node, label=above:{\small\itshape a1}] (a1) at (1,-1) {};
+  \node[node, label=above:{\small\itshape b1}] (b1) at (1,-2) {};
+  \node[node, label=above:{\small\itshape a2}] (a2) at (2,-1) {};
+  \node[node, label=above:{\small\itshape b2}] (b2) at (2,-2) {};
+
+  \draw[edge] (a0) -- (a1);
+  \draw[edge] (b0) -- (b1);
+  \draw[edge] (a1) -- (a2);
+  \draw[edge] (b1) -- (b2);
+  \draw[edge] (a0) -- (b1);
+  \draw[edge] (b0) -- (a1);
+  \draw[edge] (a1) -- (b2);
+  \draw[edge] (b1) -- (a2);
+\end{tikzpicture}
+\end{center}
 
 \exercise{3.3.1.11}
 
@@ -1788,13 +1814,16 @@ Consider the infinite graph $G = (V, A, \text{src}, \text{tgt})$ depicted below,
 
 \ans
 
-TODO
-
+\es $V = \N \times \N$; $A = (\N \times \N) \sqcap \set{N,E}$
+\ei $src = \pi_1$ so $((x,y),..) \mapsto (x,y)$;
+    $dst = \set{ ((x,y),N) \mapsto (x,y+1)} \cup \set{ ((x,y),E) \mapsto
+    (x+1,y)}$ where $x,y \in \N$.
+\ee
 
 \exercise{3.3.1.12}
 
-A graph is a pair of functions $A \to V$. This sets up the notion of equalizer
-and coequalizer (see Definitions 2.5.3.1 and 2.6.3.1).
+A graph is a pair of functions $A \toto V$. This sets up the notion of
+equalizer and coequalizer (see Definitions 2.5.3.1 and 2.6.3.1).
 
 \es What feature of a graph is captured by the equalizer of its source and
     target functions?
