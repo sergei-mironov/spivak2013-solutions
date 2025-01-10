@@ -1,5 +1,6 @@
 CWD=`pwd`
 export PROJECT_SOURCE="$CWD"
+export PROJECT_ROOT="$PROJECT_SOURCE"
 export VIM_PLUGINS="/home/grwlf/proj/vim-sm-terminal-images/vim,$CWD/modules/vim-terminal-images,$CWD/vim"
 export TUPIMAGE_UPLOADING_METHOD=file
 

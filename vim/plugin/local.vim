@@ -23,7 +23,7 @@ fun! LitReplPasteFix(scope) range " -> [int, string]
     throw "Select some text"
   endif
   let b:litrepl_ai_interpreter = "aicli-paster.py"
-  let b:litrepl_ai_auxdir = $PROJECT_SOURCE."/_litrepl/ai_paster"
+  let b:litrepl_ai_auxdir = $PROJECT_SOURCE."/_litrepl/ai/per-task/paster"
   try
     let result = LitReplTaskNew(scope, "/S")
   finally
@@ -36,13 +36,6 @@ if !exists(":LAIPasteFix")
   command! -range -bar -nargs=0 LAIPasteFix call LitReplPasteFix(<range>!=0)
 endif
 
-
-augroup MDFileTypeCheck
-  autocmd!
-  autocmd BufRead,BufNewFile * if expand('%:t') =~ 'AI' && expand('%:e') == 'md' |
-        \ let b:litrepl_ai_auxdir = $PROJECT_SOURCE . "/_litrepl/ai_".expand('%:t:r') |
-        \ endif
-augroup END
 nnoremap <F5> :LEval<CR>
 
 
