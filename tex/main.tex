@@ -1791,10 +1791,151 @@ in $G$?
 
 \ans
 
-We proof isomorphism between $f$ and $g$ by showing $f \circ g = id_1$ and $g
-\circ f = id_2$.
+Note: We proof isomorphism between $A$ and $B$ by showing $(f:A\to B) \circ (g:B
+\to A) = id_B$ and $g \circ f = id_A$.
 
-TODO
+Consider a set of graph homomorphisms $H = [n] \to G$. It has the following structure:
+$(f_0, f_1) = (\set{0_v \mapsto v_0, 1_V \mapsto v_1, ...}, \set{0_A \mapsto
+a_1, 1_A \mapsto a_2, ...})$ where $i_V$,$i_A$ - vertices and arrows of $[n]$
+and $v_i$, $a_i$ - vertices and arrows of $G$.
+
+We define $f: Path^{(n)} \to H$ and $g:H \to Path^{(n)}$ as follows: $f = v
+(a_i)^{[n-1]} \mapsto (\set{i_V \mapsto v(a_i)^{[i]}}, \set{i_A \mapsto a_i})$, $g
+= (\set{...}, \set{...}) \mapsto v(a_i)^{[n-1]}$ where $(a_i)^{[n]} = a_0 a_1 ...
+a_{(n-1)}$, $(a_i)^0$ expands to nothing (no arrows), $n \in \set{1,...}$ -
+number of path vertices.
+
+(sounds pretty obvious that $f\circ g = id = g \circ f$)
+
+TODO?
+
+
+\exercise{3.3.3.6} Given a morphism of graphs $f : G \to G'$, there is an
+induced function $\text{Path}(f) : \text{Path}(G) \to \text{Path}(G')$.
+
+\es Is it the case that for every $n \in \mathbb{N}$, the function
+    $\text{Path}(f)$ carries $\text{Path}^{(n)}(G)$ to $\text{Path}^{(n)}(G')$,
+    or can path lengths change in this process?
+\ei Suppose that $f_0$ and $f_1$ are injective (meaning no two distinct vertices in
+    $G$ are sent to the same vertex, respectively for arrows, under $f$). Does this
+    imply that $\text{Path}(f)$ is also injective (meaning no two distinct paths are
+    sent to the same path under $f$)?
+\ei Suppose that $f_0$ and $f_1$ are surjective (meaning every vertex in $G'$ and
+    every arrow in $G'$ is in the image of $f$). Does this imply that
+    $\text{Path}(f)$ is also surjective? \textit{Hint}: at least one of the
+    answers to these three questions is "no".
+\ee
+
+
+\ans
+
+\es Yes.
+\ei Yes.
+\ei No. $\text{Path}(f)$ Graph $G$ can acquire a loop, so the set of paths in
+    $G'$ can become infinitely large.
+\ee
+
+
+\exercise{3.3.3.7}
+
+Given a graph $(V, A, \textit{src}, \textit{tgt})$, let $i : A \to V \times V$
+be the function guaranteed by the universal property for products, as applied to
+$\textit{src}, \textit{tgt} : A \to V$. One might hope to summarize Condition
+$(3.6)$ for graph homomorphisms by the commutativity of the single square
+
+\begin{center}
+\includegraphics[width=0.25\textwidth]{img/commsquare.png}
+\end{center}
+
+Is the commutativity of the diagram in (above) indeed equivalent to the
+commutativity of the diagrams in (3.6)?
+
+\ans
+
+I can not see reasons why the above diagram is not the equivalent of the two
+diagrams in (3.6).
+
+TODO: Need to double-check! Very interesting! Can it be related to the no-arrows
+graphs? Can it be related to loop-arrows in graphs?
+
+
+\exercise{3.3.3.10}
+
+A relation on $\Rat$ is a subset of $\Rat \times \Rat$, and one can indicate
+such a subset of the plane by shading. Choose an error bound $\epsilon > 0$ and
+draw the relation one might refer to as "$\epsilon$-approximation". To say it
+another way, draw the relation "$x$ is within $\epsilon$ of $y$".
+
+\ans
+
+An ascending bar centered at the $y=x$ line, with $2*\epsilon$ height.
+
+\exercise{3.3.3.11}
+
+(Binary relations to graphs).
+\es If $R \subseteq S \times S$ is a binary relation, find a natural way to make
+    a graph out of it, having vertices $S$.
+\ei What is the set $A$ of arrows?
+\ei What are the source and target functions $\text{src}, \text{tgt} : A \to S$?
+\ei Take the left-hand table in (3.9) and consider its first $7$ rows (i.e.
+    forget the $..$). Draw the corresponding graph (do you see a tetrahedron?).
+\ei Do the same for the right-hand table.
+\ee
+
+\ans
+
+\es Points go to Vertices, Points in relation go to Arrows, $src$ and $dst$ mark
+    left-hand side and right-hand side points in relation.
+\ei Arrows indicate points in relation to each other.
+\ei $src$ selects left-hand side points in relation, $dst$ selects right-hand
+    side points.
+\li Graph corresponding to the left table in (3.9).
+
+    \begin{center}
+    \begin{tikzpicture}
+      \tikzstyle{node} = [circle, draw, fill=black, inner sep=1.2pt]
+      \tikzstyle{edge} = [->, semithick, shorten >=2pt, shorten <=2pt, >=stealth]
+
+      \node[node, label=above:{\small\itshape 0}] (0) at (0,0) {};
+      \node[node, label=above:{\small\itshape 1}] (1) at (-1,-1) {};
+      \node[node, label=below:{\small\itshape 2}] (2) at (0,-2) {};
+      \node[node, label=above:{\small\itshape 3}] (3) at (1,-1) {};
+
+      \draw[edge, looseness=30] (0) to (0);
+      \draw[edge] (0) to (1);
+      \draw[edge, looseness=30] (1) to (1);
+      \draw[edge] (0) to (2);
+      \draw[edge] (1) to (2);
+      \draw[edge, looseness=30] (2) to (2);
+      \draw[edge] (0) to (3);
+      \draw[edge, dotted] (1) to (3);
+      \draw[edge, dotted] (2) to (3);
+      \draw[edge, dotted, looseness=30] (3) to (3);
+    \end{tikzpicture}
+    \end{center}
+\ei Graph corresponding to the right-hand table in (3.9)
+    \begin{center}
+    \begin{tikzpicture}
+      \tikzstyle{node} = [circle, draw, fill=black, inner sep=1.2pt]
+      \tikzstyle{edge} = [->, semithick, shorten >=2pt, shorten <=2pt, >=stealth]
+      \node[node, label=below:{\small\itshape 0}] (0) at (0,0) {};
+      \node[node, label=below:{\small\itshape 1}] (1) at (1,0) {};
+      \node[node, label=below:{\small\itshape 2}] (2) at (2,0) {};
+      \node[node, label=below:{\small\itshape 3}] (3) at (3,0) {};
+      \draw[edge] (0) to (1);
+      \draw[edge] (1) to (0); // Reverse edge
+      \draw[edge] (1) to (2);
+      \draw[edge] (2) to (1); // Reverse edge
+      \draw[edge, dotted] (2) to (3);
+      \draw[edge, dotted] (3) to (2); // Reverse edge
+      \draw[edge, looseness=30] (0) to (0); // Loop
+      \draw[edge, looseness=30] (1) to (1); // Loop
+      \draw[edge, looseness=30] (2) to (2); // Loop
+      \draw[edge, dotted, looseness=30] (3) to (3); // Loop
+    \end{tikzpicture}
+    \end{center}
+\ee
+
 
 \vsp
 \vsp
