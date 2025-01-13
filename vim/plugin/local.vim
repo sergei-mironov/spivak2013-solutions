@@ -25,7 +25,7 @@ fun! LitReplPasteFix(scope) range " -> [int, string]
   let b:litrepl_ai_interpreter = "aicli-paster.py"
   let b:litrepl_ai_auxdir = $PROJECT_SOURCE."/_litrepl/ai/per-task/paster"
   try
-    let result = LitReplTaskNew(scope, "/S")
+    let result = LitReplTaskNew(scope, "/S", 0)
   finally
     unlet b:litrepl_ai_auxdir
     unlet b:litrepl_ai_interpreter
