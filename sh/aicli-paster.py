@@ -3,6 +3,7 @@ from sm_aicli.types import Conversation, Utterance, Intention, UserName
 from sm_aicli.main import main, AICLI_PROVIDERS, OpenAIActor
 from textwrap import dedent
 from copy import deepcopy
+from os import environ
 
 class OpenAIActorPaster(OpenAIActor):
   def react(self, actors, cnv:Conversation) -> Utterance:
@@ -13,7 +14,7 @@ class OpenAIActorPaster(OpenAIActor):
 
     cnv = deepcopy(cnv)
     acc = []
-    with open("pastebugs.tex") as f:
+    with open(f"{environ['PROJECT_ROOT']}/pastebugs.tex") as f:
       for line in f.readlines():
         src,dst = line.split('=====>')
         acc.extend([
