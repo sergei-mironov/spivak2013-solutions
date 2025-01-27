@@ -1856,7 +1856,8 @@ I can not see reasons why the above diagram is not the equivalent of the two
 diagrams in (3.6).
 
 TODO: Need to double-check! Very interesting! Can it be related to the no-arrows
-graphs? Can it be related to loop-arrows in graphs?
+graphs? Can it be related to loop-arrows in graphs? Note: Is it about problems
+with sibling arrows? Most likely yes!
 
 
 \exercise{3.3.3.10}
@@ -1870,9 +1871,8 @@ another way, draw the relation "$x$ is within $\epsilon$ of $y$".
 
 An ascending bar centered at the $y=x$ line, with $2*\epsilon$ height.
 
-\exercise{3.3.3.11}
+\exercise{3.3.3.11} (Binary relations to graphs).
 
-(Binary relations to graphs).
 \es If $R \subseteq S \times S$ is a binary relation, find a natural way to make
     a graph out of it, having vertices $S$.
 \ei What is the set $A$ of arrows?
@@ -1936,6 +1936,97 @@ An ascending bar centered at the $y=x$ line, with $2*\epsilon$ height.
     \end{center}
 \ee
 
+
+\exercise{3.3.3.12} (Graphs to binary relations).
+
+\ls If $(V, A, src, tgt)$ is a graph, find a natural way to make a binary
+    relation $R \subseteq V \times V$ out of it.
+\li Take the left-hand graph $G$ from (3.7) and write out the corresponding
+    binary relation in table form.
+    \begin{center}
+    \includegraphics[width=0.25\textwidth]{img/3-7-left.png}
+    \end{center}
+\le
+
+\ans
+
+\ls Let $R_G \subseteq V \times V = \set{(src(a), dst(a)) | a \in A_G}$.
+\li $R_G = \set{(1,4),(1,2),(2,3),(5,6)}$. Note: What about duplications, here
+    $(1,4)$?
+\le
+
+
+\exercise{3.3.3.13} (Going around the loops)
+
+\ls Given a binary relation $R \subseteq S \times S$, you know from Exercise
+    3.3.3.11 how to construct a graph out of it, and from Exercise 3.3.3.12 how
+    to make a new binary relation out of that. How does the resulting relation
+    compare with the original?
+\li Given a graph $(V, A, src, tgt)$, you know from Exercise 3.3.3.12 how to
+    make a new binary relation out of it, and from Exercise 3.3.3.11 how to
+    construct a new graph out of that. How does the resulting graph compare with
+    the original?
+\le
+
+\ans
+
+\ls The new relation will be identical to the original
+\li The new graph will not be identical to the original. The sibling arrows will
+    be joined into one arrow. The vertices without arrows will disappear.
+\le
+
+\subsection{Orders}
+
+\exercise{3.4.1.2}
+
+\ls Decide whether the table to the left in Display (3.9) constitutes a linear
+    order.
+\li Show that neither of the other tables are even preorders.
+\le
+
+\ans
+
+\ls Yes it is a linear order. It is reflexive, transitive, antisymmetric and
+    comparable.
+\li The $|n-m| \leq 1$ is not transitive, thus, it is not a preorder. The $n=5m$
+    relation has gaps (not reflexive), so, again, not a preorder.
+\le
+
+
+\exercise{3.4.1.8}
+
+Let $S = \{1, 2, 3, 4\}$.
+
+\es Find a preorder $R \subseteq S \times S$ such that the set $R$ is as small
+    as possible. Is it a partial order? Is it a linear order?
+\ei Find a preorder $R_1 \subseteq S \times S$ such that the set $R_1$ is as
+    large as possible. Is it a partial order? Is it a linear order?
+\ee
+
+\ans
+
+\es $R = \set{(1,1),(2,2),(3,3),(4,4)}$. It is reflexive, and formally
+    transitive. It is a partial order. It is not a linear order.
+\ei $R_1$ should be a fully-connected graph. It is a reflexive and transitive by
+    definition, but it contains non-trivial loops (symmetric). Thus, it is not a
+    partial order. Also it is not a linear order.
+\ee
+
+\exercise{3.4.1.9}
+
+\es List all the preorder relations possible on the set $\set{1, 2}$.
+\ei For any $n \in \N$, how many linear orders exist on the set
+    $\set{1, 2, 3, \ldots, n}$.
+\ei Does your formula work when $n = 0$?
+\ee
+
+\ans
+
+\es There are $\set{(1,1),(2,2)}$, $\set{(1,1),(2,2),(1,2)}$,
+    $\set{(1,1),(2,2),(2,1)}$, $\set{(1,1),(2,2),(1,2),(2,1)}$.
+\ei TODO
+\ei TODO
+\ee
 
 \vsp
 \vsp
