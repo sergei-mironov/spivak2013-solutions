@@ -2024,9 +2024,55 @@ Let $S = \{1, 2, 3, 4\}$.
 
 \es There are $\set{(1,1),(2,2)}$, $\set{(1,1),(2,2),(1,2)}$,
     $\set{(1,1),(2,2),(2,1)}$, $\set{(1,1),(2,2),(1,2),(2,1)}$.
-\ei TODO
-\ei TODO
+\ei Linear orders are permuations of set elements. Thus, for n-element set there
+    are $ n! $ linear orders.
+\ei $0!$  is set to be $1$, and there is one linear order $R \subseteq \set{} \times
+    \set{} = \set{}$. So, the formula works.
 \ee
+
+\exercise{3.4.1.12}
+
+Let $G = (V, A, src, tgt)$ be the graph below.
+
+\begin{center}
+\includegraphics[width=0.25\textwidth]{img/order-example.png}
+\end{center}
+
+In the corresponding pre-order which of the following are true:
+
+(a) $a \leq b$?
+(b) $a \leq c$?
+(c) $c \leq b$?
+(d) $b = c$?
+(e) $e \leq f$?
+(f) $f \leq d$?
+
+\ans
+
+(a) True (b) True (c) True (d) False. The equality is a partial-order
+requirement. (e) False (f) True.
+
+\exercise{3.4.1.13}
+
+\es Let $S = \{1, 2\}$. The subsets of $S$ form a partial order; draw the
+    associated graph.
+\ei Repeat this for $Q = \emptyset$, $R = \{1\}$, and $T = \{1, 2, 3\}$.
+\ei Do you see $n$ - dimensional cubes?
+\ee
+
+\ans
+
+TODO
+
+
+\exercise{3.4.1.15}
+
+True or false: a partial order is a preorder that has no cliques. (If false, is
+there a "nearby" true statement?)
+
+\ans
+
+TODO
 
 \vsp
 \vsp
