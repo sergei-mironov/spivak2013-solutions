@@ -2062,8 +2062,53 @@ requirement. (e) False (f) True.
 
 \ans
 
-TODO
+\es Case $S = \{1, 2\}$
+    \begin{center}
+    \begin{tikzpicture}
+      \tikzstyle{node} = [circle, draw, fill=black, inner sep=1.2pt]
+      \tikzstyle{edge} = [->, semithick, shorten >=2pt, shorten <=2pt, >=stealth]
+      \node[node, label=above:{\small\itshape $\set{1,2}$}] (12) at (0,0) {};
+      \node[node, label=left:{\small\itshape $\set{1}$}] (1) at (-1,-1) {};
+      \node[node, label=right:{\small\itshape $\set{2}$}] (2) at (1,-1) {};
+      \node[node, label=below:{\small\itshape $\set{}$}]  (0) at (0,-2) {};
+      \draw[edge] (12) to (1);
+      \draw[edge] (12) to (2);
+      \draw[edge] (1) to (0);
+      \draw[edge] (2) to (0);
+    \end{tikzpicture}
+    \end{center}
+\ei
+    $Q = \set{}$ - a dot; $R = \set{1}$ - a line; $T = \set{1,2,3}$:
+    \begin{center}
+    \begin{tikzpicture}
+      \tikzstyle{node} = [circle, draw, fill=black, inner sep=1.2pt]
+      \tikzstyle{edge} = [->, semithick, shorten >=2pt, shorten <=2pt, >=stealth]
+      \node[node, label=above:{\small\itshape $\set{1,2,3}$}] (123) at (0,0) {};
+      \node[node, label=left:{\small\itshape $\set{1,2}$}] (12) at (-1,-1) {};
+      \node[node, label=left:{\small\itshape $\set{1,3}$}] (13) at (0,-1) {};
+      \node[node, label=left:{\small\itshape $\set{2,3}$}] (23) at (1,-1) {};
+      \node[node, label=left:{\small\itshape $\set{1}$}] (1) at (-1,-2) {};
+      \node[node, label=left:{\small\itshape $\set{2}$}] (2) at (0,-2) {};
+      \node[node, label=left:{\small\itshape $\set{3}$}] (3) at (1,-2) {};
+      \node[node, label=below:{\small\itshape $\set{}$}]  (0) at (0,-3) {};
+      \draw[edge] (123) to (12);
+      \draw[edge] (123) to (13);
+      \draw[edge] (123) to (23);
+      \draw[edge] (12) to (1);
+      \draw[edge] (12) to (2);
+      \draw[edge] (13) to (1);
+      \draw[edge] (13) to (3);
+      \draw[edge] (23) to (2);
+      \draw[edge] (23) to (3);
+      \draw[edge] (1) to (0);
+      \draw[edge] (2) to (0);
+      \draw[edge] (3) to (0);
+    \end{tikzpicture}
+    \end{center}
 
+\ei
+    Yes
+\ee
 
 \exercise{3.4.1.15}
 
@@ -2072,7 +2117,9 @@ there a "nearby" true statement?)
 
 \ans
 
-TODO
+Probably, false. TODO find out the correct statement.
+
+
 
 \vsp
 \vsp
